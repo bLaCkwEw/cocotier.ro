@@ -1,0 +1,62 @@
+html,
+body {
+  margin: 0;
+  width: 100%;
+}
+
+body {
+  background-color: #222226;
+  color: #fff;
+  font-family: sans-serif;
+  padding: 4rem 0;
+  margin: 0 auto;
+}
+
+pre {
+  display: block;
+  overflow-x: auto;
+}
+
+body,
+.title,
+.tree {
+  width: max-content;
+}
+
+.title {
+  text-align: center;
+}
+
+.tree {
+  font-size: 7px;
+
+  background-image: repeating-linear-gradient(
+    to right,
+    #202a5f,
+    #4b2585,
+    #9b316d,
+    #ec4a4d,
+    #ff8246,
+    #ffb735,
+    #ffff00,
+    #c9ef00
+  );
+  background-size: 800% 800%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+
+  animation: rainbow 13000ms linear infinite;
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 25%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
