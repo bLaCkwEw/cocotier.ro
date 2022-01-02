@@ -1,11 +1,5 @@
-html,
 body {
-  margin: 0;
-  width: 100%;
-}
-
-body {
-  background-color: #222226;
+  background-color: #0b0e16;
   color: #fff;
   font-family: monospace;
   padding: 4rem 0;
@@ -17,18 +11,14 @@ pre {
   overflow-x: auto;
 }
 
-body,
-.title,
-.tree {
-  width: max-content;
-}
-
 .title {
   text-align: center;
 }
 
 .tree {
-  font-size: 7px;
+  font-size: 1em;
+  width: max-content;
+  margin: 0 auto;
 
   background-image: repeating-linear-gradient(
     to right,
