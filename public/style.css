@@ -2,8 +2,14 @@ body {
   background-color: #0b0e16;
   color: #fff;
   font-family: monospace;
-  padding: 4rem 0;
+  max-width: 600px;
+  padding: 4rem 2rem;
   margin: 0 auto;
+}
+
+a,
+a:visited {
+  color: #8be9fd;
 }
 
 pre {
