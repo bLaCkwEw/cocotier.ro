@@ -1,0 +1,17 @@
+---
+const url = Astro.site.pathname;
+---
+
+<nav class="nav">
+<a href={url}>cocotier.ro</a>
+<a href={url + "blog"}>Blog</a>
+</nav>
+
+<style>
+.nav {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3em;
+    padding-bottom: 2em;
+}
+</style>
