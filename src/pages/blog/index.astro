@@ -1,9 +1,23 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro"
+
+const posts = Astro.fetchContent("./posts/*.md")
 ---
 
 <BaseLayout title="Blog">
 <h1>Blog</h1>
 
-<a href="/blog/ce-este-un-cocotier-totul-despre-cocotieri">Ce este un cocotier? Totul despre cocotieri</a>
+{posts.map((post) => (
+    <article class="article">
+    <a href={post.url}>{post.title}</a>
+    </article>
+))}
+
 </BaseLayout>
+
+<style>
+.article {
+    /* margin: 1em 0; */
+    line-height: 2;
+}
+</style>
