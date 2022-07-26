@@ -1,16 +1,16 @@
 {
-  "name": "cocotier-ro",
-  "version": "0.0.2",
-  "private": true,
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview"
-  },
-  "devDependencies": {
-    "@astrojs/prefetch": "^0.0.6",
-    "@astrojs/sitemap": "^0.2.6",
-    "astro": "^1.0.0-rc.1"
-  }
+	"name": "cocotier-ro",
+	"version": "0.0.21",
+	"private": true,
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview"
+	},
+	"devDependencies": {
+		"@astrojs/prefetch": "^0.0.6",
+		"@astrojs/sitemap": "^0.2.6",
+		"astro": "^1.0.0-rc.1"
+	}
 }

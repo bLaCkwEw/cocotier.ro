@@ -7,13 +7,16 @@ import sitemap from "@astrojs/sitemap"; // Full Astro Configuration API Document
 // You can disable this by removing "@ts-check" and `@type` comments below.
 // @ts-check
 // https://astro.build/config
-// https://astro.build/config
 
 import prefetch from "@astrojs/prefetch";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [sitemap({
-    canonicalURL: "https://cocotier.ro"
-  }), prefetch()]
+	site: "https://cocotier.ro",
+	integrations: [
+		sitemap({
+			canonicalURL: "https://cocotier.ro",
+		}),
+		prefetch(),
+	],
 });
