@@ -1,10 +1,10 @@
 ---
-const url = Astro.site.pathname;
+const url = Astro.url.origin;
 ---
 
 <nav class="nav">
-<a href={url}>cocotier.ro</a>
-<a href={url + "blog"}>Blog</a>
+<a href={url} rel="prefetch">cocotier.ro</a>
+<a href={`${url}/blog`} rel="prefetch">Blog</a>
 </nav>
 
 <style>

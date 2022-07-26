@@ -1,6 +1,6 @@
 {
-  "name": "@example/minimal",
-  "version": "0.0.1",
+  "name": "cocotier-ro",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -9,7 +9,8 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "@astrojs/sitemap": "^0.2.2",
-    "astro": "^1.0.0-beta.56"
+    "@astrojs/prefetch": "^0.0.6",
+    "@astrojs/sitemap": "^0.2.6",
+    "astro": "^1.0.0-rc.1"
   }
 }
