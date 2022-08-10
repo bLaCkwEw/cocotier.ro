@@ -1,4 +1,6 @@
-# cocotier.ro
+# [cocotier.ro](https://cocotier.ro)
+
+Personal website made with [Astro](https://astro.build) and hosted on [Vercel](https://vercel.com).
 
 <pre>
                           ██                                
