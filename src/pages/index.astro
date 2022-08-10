@@ -1,24 +1,16 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro"
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Nav from "@components/Nav.astro"
+import Footer from "@components/Footer.astro"
 ---
 
+<Nav />
 <BaseLayout title="Home">
+	<h1 class="text-6xl">We simply do <span class="underline decoration-primary font-medium">more</span></h1>
+	<p class="opacity-80 my-4 w-64">
+		From responsive landing pages and html emails to digital marketing and even task automation, if you have a need, we have a way to fulfill it.
+	</p>
 
-		<pre class="tree">
-            __ _.--..--._ _
-     .-' _/   _/\_   \_'-.
-    |__ /   _/\__/\_   \__|
-       |___/\_\__/  \___|
-              \__/
-              \__/
-               \__/
-                \__/
-             ____\__/___
-       . - '             ' -.
-      /                      \
-~~~~~~~  ~~~~~ ~~~~~  ~~~ ~~~  ~~~~~
-                   
-		</pre>
-		<h1 class="title">cocotier.ro</h1>
-
+	<a href="#" class="btn btn-primary">get in touch</a>
 </BaseLayout>
+<Footer />

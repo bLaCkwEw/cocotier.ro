@@ -1,0 +1,3 @@
+.btn {
+	@apply lowercase shadow-gray-700 shadow rounded-sm font-medium;
+}

@@ -1,20 +1,23 @@
 ---
-import Nav from "../lib/Nav.astro"
-const {title} = Astro.props;
+import "@styles/components.css" 
+const { title } = Astro.props;
 ---
 
-<html lang="ro">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/x-icon" href="/favicon.png" />
-    <meta name="viewport" content="width=device-width" />
-    <title>cocotier.ro - {title}</title>
+<!DOCTYPE html>
+<html lang="en" data-theme="winter">
 
-    <link rel="stylesheet" href="/style.css" />
-  </head>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width" />
+	<link rel="icon" type="image/x-icon" href="/favicon.png" />
+	<meta name="generator" content={Astro.generator} />
+	<title>{`${title} - cocotier.ro`}</title>
+</head>
 
-  <body>
-      <Nav />
-      <slot />
-  </body>
+<body>
+	<main class="px-10 my-8">
+		<slot />
+	</main>
+</body>
+
 </html>
