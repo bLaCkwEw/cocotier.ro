@@ -1,0 +1,21 @@
+---
+
+const res = await fetch("https://tcwk2rc4.directus.app/items/blog_posts/3?fields=content");
+const js = await res.json
+const post = await js;
+
+export async function getStaticPaths() {
+	return {
+		params: {
+			slug: "b"
+		},
+		props: {
+			post
+		}
+	}
+}
+
+const { Content } = Astro.props.post
+---
+
+<Content />

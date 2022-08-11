@@ -1,7 +1,15 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+import { directus } from "@components/helpers/directus"
+
+const data = await directus.getPosts();
 ---
 
-<BaseLayout>
+<BaseLayout title="Blog">
 	<h1 class="text-4xl">Blog</h1>
+
+	<pre>
+		{JSON.stringify(data)}
+	</pre>
+
 </BaseLayout>

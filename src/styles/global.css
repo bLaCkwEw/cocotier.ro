@@ -1,0 +1,36 @@
+* {
+	@apply leading-7;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@apply my-3 font-bold;
+}
+
+h1 {
+	@apply sm:text-5xl text-4xl text-center my-6;
+}
+
+h2 {
+	@apply sm:text-4xl text-3xl;
+}
+
+h3 {
+	@apply sm:text-3xl text-2xl;
+}
+
+p {
+	@apply text-gray-700;
+}
+
+p code {
+	@apply bg-base-200 p-1.5 rounded;
+}
+
+pre {
+	@apply p-4 text-sm rounded-md my-4 whitespace-pre-wrap;
+}

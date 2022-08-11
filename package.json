@@ -10,6 +10,8 @@
 		"astro": "astro"
 	},
 	"devDependencies": {
+		"@astrojs/mdx": "^0.8.2",
+		"@astrojs/prefetch": "^0.0.6",
 		"@astrojs/sitemap": "^1.0.0",
 		"@astrojs/tailwind": "^1.0.0",
 		"astro": "^1.0.1"
