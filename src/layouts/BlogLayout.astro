@@ -1,9 +1,21 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 
-const { title } = Astro.props.content || Astro.props;
+const { title } = Astro.props;
 ---
 
 <BaseLayout title={title}>
-	<slot />
+	<article>
+		<slot />
+	</article>
 </BaseLayout>
+
+<style>
+	article {
+		@apply max-w-full sm:max-w-2xl mx-auto;
+	}
+
+	article :global(img) {
+		@apply rounded-md w-full max-w-full sm:max-w-2xl mx-auto shadow-md shadow-secondary;
+	}
+</style>

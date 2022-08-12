@@ -1,19 +1,33 @@
 ---
-export async function getStaticPaths() {
-const res = await fetch("https://tcwk2rc4.directus.app/items/blog_posts/3?fields=content").then(r => r.json());
-const post = await res.data.content;
+import BlogLayout from "@layouts/BlogLayout.astro";
+import Markdown from "@astrojs/markdown-component"
+import { directus } from "@components/helpers/directus";
 
-	return {
-		params: {
-			slug: "b"
-		},
-		props: {
-			post: post
+export async function getStaticPaths() {
+	const data = await directus.getPosts()
+
+	return data.map((post) => {
+		return {
+			params: {
+				slug: post.slug
+			},
+			props: { post }
 		}
-	}
+	})
+
 }
 
-const { Content } = Astro.props.post
+const { post } = Astro.props
 ---
 
-<Content />
+<BlogLayout title={post.title}>
+
+	<header>
+		<h1>{post.title}</h1>
+	</header>
+
+	<img src={`https://tcwk2rc4.directus.app/assets/${post.image}?width=500`} alt="">
+
+
+	<Markdown content={post.content} />
+</BlogLayout>

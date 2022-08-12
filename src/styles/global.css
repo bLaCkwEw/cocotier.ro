@@ -8,7 +8,7 @@ h3,
 h4,
 h5,
 h6 {
-	@apply my-3 font-bold;
+	@apply my-6 font-bold;
 }
 
 h1 {
@@ -24,7 +24,7 @@ h3 {
 }
 
 p {
-	@apply text-gray-700;
+	@apply text-gray-700 my-5;
 }
 
 p code {

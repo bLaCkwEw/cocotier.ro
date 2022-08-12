@@ -2,6 +2,6 @@
 	@apply lowercase shadow-gray-700 shadow rounded-sm font-medium;
 }
 
-.language-id {
+/* .language-id {
 	@apply hidden;
-}
+} */
