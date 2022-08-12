@@ -13,7 +13,6 @@
 		"@astrojs/prefetch": "^0.0.6",
 		"@astrojs/sitemap": "^1.0.0",
 		"@astrojs/tailwind": "^1.0.0",
-		"@astrojs/vercel": "^1.0.0",
 		"astro": "^1.0.3"
 	},
 	"dependencies": {

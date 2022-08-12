@@ -3,12 +3,9 @@ import tailwind from "@astrojs/tailwind";
 import prefetch from "@astrojs/prefetch";
 import sitemap from "@astrojs/sitemap";
 
-import vercel from "@astrojs/vercel/static";
-
 // https://astro.build/config
 export default defineConfig({
 	site: "https://preview.cocotier.ro",
-	adapter: vercel(),
 	markdown: {
 		syntaxHighlight: "shiki",
 		shikiConfig: {
