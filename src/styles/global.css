@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
 	@apply leading-7;
 }
@@ -33,4 +37,37 @@ p code {
 
 pre {
 	@apply p-4 text-sm rounded-md my-4 whitespace-pre-wrap;
+}
+
+article {
+	@apply max-w-full sm:max-w-2xl mx-auto;
+}
+
+article a {
+	@apply link font-medium text-base-content;
+}
+
+article img {
+	@apply rounded-md w-full max-w-full sm:max-w-2xl mx-auto shadow-md shadow-secondary;
+}
+
+ol,
+ul {
+	@apply text-gray-700 ml-4;
+}
+
+ol {
+	@apply list-decimal;
+}
+
+ul {
+	@apply list-disc;
+}
+
+blockquote {
+	@apply border-l-4 border-l-base-200 pl-4;
+}
+
+blockquote p {
+	@apply py-4;
 }

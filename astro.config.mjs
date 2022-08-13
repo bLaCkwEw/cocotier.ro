@@ -15,14 +15,17 @@ export default defineConfig({
 		remarkPlugins: ["remark-gfm", "remark-smartypants"],
 	},
 	integrations: [
-		tailwind(),
+		tailwind({
+			config: {
+				applyBaseStyles: false,
+			},
+		}),
 		sitemap({
 			changefreq: "monthly",
-			priority: 0.5,
-			lastmod: new Date(),
+			priority: 0.8,
 		}),
 		prefetch({
-			throttle: 3,
+			throttle: 5,
 		}),
 	],
 });
