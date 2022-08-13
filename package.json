@@ -1,6 +1,6 @@
 {
 	"name": "cocotier.ro",
-	"version": "0.1.0",
+	"version": "0.1.5",
 	"private": true,
 	"scripts": {
 		"dev": "astro dev",
@@ -10,13 +10,13 @@
 		"astro": "astro"
 	},
 	"devDependencies": {
-		"@astrojs/prefetch": "^0.0.6",
+		"@astrojs/prefetch": "^0.0.7",
 		"@astrojs/sitemap": "^1.0.0",
 		"@astrojs/tailwind": "^1.0.0",
-		"astro": "^1.0.3"
+		"astro": "^1.0.4"
 	},
 	"dependencies": {
 		"@astrojs/markdown-component": "^1.0.1",
-		"daisyui": "^2.22.0"
+		"daisyui": "^2.24.0"
 	}
 }
