@@ -9,13 +9,3 @@ const { title } = Astro.props;
 		<slot />
 	</article>
 </BaseLayout>
-
-<style>
-	article {
-		@apply max-w-full sm:max-w-2xl mx-auto;
-	}
-
-	article :global(img) {
-		@apply rounded-md w-full max-w-full sm:max-w-2xl mx-auto shadow-md shadow-secondary;
-	}
-</style>
