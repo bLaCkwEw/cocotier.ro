@@ -1,0 +1,24 @@
+---
+const { slug, title, description, date_published } = Astro.props;
+
+/*
+* Month Day, Year 
+* example: March 5, 2020
+*/
+const posted_on = new Date(date_published).toLocaleString("en-US", { day: "2-digit", month: "long", year: "numeric" });
+---
+
+<div class="my-8 p-2 -ml-2">
+
+	<div>
+		<div>
+			<time class="text-gray-500" datetime={date_published}>{posted_on}</time>
+		</div>
+		<a href={`blog/${slug}`} rel="prefetch">
+			<h2 class="link link-hover mt-2">{title}</h2>
+
+
+			<div class="leading-6">{description}</div>
+		</a>
+	</div>
+</div>

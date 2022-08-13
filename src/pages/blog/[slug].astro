@@ -1,12 +1,18 @@
 ---
 import BlogLayout from "@layouts/BlogLayout.astro";
 import Markdown from "@astrojs/markdown-component"
+import type { Post } from "@components/types";
 import { directus } from "@components/helpers/directus";
+
 
 export async function getStaticPaths() {
 	const data = await directus.getPosts()
 
-	return data.map((post) => {
+	return data.map((post: Post) => {
+		// if (post.status !== "published") {
+		// 	return
+		// }
+
 		return {
 			params: {
 				slug: post.slug
@@ -17,7 +23,7 @@ export async function getStaticPaths() {
 
 }
 
-const { post } = Astro.props
+const { post } = Astro.props;
 ---
 
 <BlogLayout title={post.title}>
@@ -26,7 +32,7 @@ const { post } = Astro.props
 		<h1>{post.title}</h1>
 	</header>
 
-	<img src={`https://tcwk2rc4.directus.app/assets/${post.image}?width=500`} alt="">
+	<img src={`https://tcwk2rc4.directus.app/assets/${post.image}?width=500`} alt="" width="200px" height="auto">
 
 
 	<Markdown content={post.content} />
