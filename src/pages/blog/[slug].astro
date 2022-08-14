@@ -24,7 +24,11 @@ export async function getStaticPaths() {
 const { post } = Astro.props
 ---
 
-<BlogLayout title={post.title}>
+<BlogLayout
+	title={post.title}
+	description={post.description}
+	image={`https://tcwk2rc4.directus.app/assets/${post.image}?width=500`}
+>
 	<header>
 		<h1>{post.title}</h1>
 	</header>
