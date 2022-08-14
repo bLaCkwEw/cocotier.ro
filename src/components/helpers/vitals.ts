@@ -1,4 +1,5 @@
-import { getCLS, getFCP, getFID, getLCP, getTTFB } from "web-vitals";
+import pkg from "web-vitals";
+const { getCLS, getFCP, getFID, getLCP, getTTFB } = pkg;
 
 const vitalsUrl = "https://vitals.vercel-analytics.com/v1/vitals";
 
