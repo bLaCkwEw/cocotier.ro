@@ -10,14 +10,16 @@ const posts = await directus.getPosts()
 <BaseLayout title="Blog">
 	<h1 class="text-left">Blog</h1>
 
-	{
-		posts.map((post: Post) => (
-			<Article
-				slug={post.slug}
-				title={post.title}
-				description={post.description}
-				date_published={post.date_published}
-			/>
-		))
-	}
+	<div class="grid lg:grid-cols-2 gap-8">
+		{
+			posts.map((post: Post) => (
+				<Article
+					slug={post.slug}
+					title={post.title}
+					description={post.description}
+					date_published={post.date_published}
+				/>
+			))
+		}
+	</div>
 </BaseLayout>
