@@ -2,7 +2,7 @@
 const { analyticsId = import.meta.env.VERCEL_ANALYTICS_ID } = Astro.props;
 ---
 
-<script define:vars={analyticsId}>
+<script define:vars={{analyticsId}}>
 	import { getCLS, getFCP, getFID, getLCP, getTTFB } from 'web-vitals';
 
 	const vitalsUrl = 'https://vitals.vercel-analytics.com/v1/vitals';
