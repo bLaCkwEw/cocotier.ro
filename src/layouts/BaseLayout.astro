@@ -5,28 +5,26 @@ import VercelAnalytics from "@components/VercelAnalytics.astro"
 import "@styles/global.css"
 import "@styles/components.css"
 
-const { title } = Astro.props;
+const { title } = Astro.props
 ---
 
 <!DOCTYPE html>
 <html lang="en" data-theme="winter">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/x-icon" href="/favicon.png" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{`${title} - cocotier.ro`}</title>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width" />
-	<link rel="icon" type="image/x-icon" href="/favicon.png" />
-	<meta name="generator" content={Astro.generator} />
-	<title>{`${title} - cocotier.ro`}</title>
+		<VercelAnalytics />
+	</head>
 
-	<VercelAnalytics />
-</head>
-
-<body>
-	<Nav />
-	<main class="px-10 sm:px-28 my-8">
-		<slot />
-	</main>
-	<Footer />
-</body>
-
+	<body>
+		<Nav />
+		<main class="px-10 sm:px-28 my-8">
+			<slot />
+		</main>
+		<Footer />
+	</body>
 </html>

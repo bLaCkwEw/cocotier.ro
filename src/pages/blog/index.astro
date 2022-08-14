@@ -1,21 +1,23 @@
 ---
-import BaseLayout from "@layouts/BaseLayout.astro";
+import BaseLayout from "@layouts/BaseLayout.astro"
 import { directus } from "@components/helpers/directus"
-import type { Post } from "@components/types";
+import type { Post } from "@components/types"
 import Article from "@components/Article.astro"
 
-
-
-const posts = await directus.getPosts();
+const posts = await directus.getPosts()
 ---
 
 <BaseLayout title="Blog">
 	<h1 class="text-left">Blog</h1>
 
-	{posts.map((post: Post) => (
-
-	<Article slug={post.slug} title={post.title} description={post.description} date_published={post.date_published} />
-
-	))}
-
+	{
+		posts.map((post: Post) => (
+			<Article
+				slug={post.slug}
+				title={post.title}
+				description={post.description}
+				date_published={post.date_published}
+			/>
+		))
+	}
 </BaseLayout>
