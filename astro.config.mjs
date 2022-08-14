@@ -6,6 +6,13 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
 	site: "https://preview.cocotier.ro",
+	vite: {
+		define: {
+			"import.meta.env.VERCEL_ANALYTICS_ID": JSON.stringify(
+				process.env.VERCEL_ANALYTICS_ID
+			),
+		},
+	},
 	markdown: {
 		syntaxHighlight: "shiki",
 		shikiConfig: {

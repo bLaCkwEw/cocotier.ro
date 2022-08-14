@@ -1,6 +1,7 @@
 ---
 import Nav from "@components/Nav.astro"
 import Footer from "@components/Footer.astro"
+import VercelAnalytics from "@components/VercelAnalytics.astro"
 import "@styles/global.css"
 import "@styles/components.css"
 
@@ -16,6 +17,8 @@ const { title } = Astro.props;
 	<link rel="icon" type="image/x-icon" href="/favicon.png" />
 	<meta name="generator" content={Astro.generator} />
 	<title>{`${title} - cocotier.ro`}</title>
+
+	<VercelAnalytics />
 </head>
 
 <body>
