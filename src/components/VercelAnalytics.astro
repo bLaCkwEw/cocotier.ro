@@ -1,11 +1,7 @@
----
-const { analyticsId = import.meta.env.VERCEL_ANALYTICS_ID } = Astro.props;
----
+<script>
+	import { getCLS, getFCP, getFID, getLCP, getTTFB } from "web-vitals";
 
-<script define:vars={{analyticsId}}>
-	import pkg from "web-vitals";
-	const { getCLS, getFCP, getFID, getLCP, getTTFB } = pkg;
-
+	const analyticsId = import.meta.env.VERCEL_ANALYTICS_ID
 	const vitalsUrl = "https://vitals.vercel-analytics.com/v1/vitals";
 
 	function getConnectionSpeed() {
