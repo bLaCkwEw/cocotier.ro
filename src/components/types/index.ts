@@ -8,6 +8,7 @@ export interface Post {
 	description?: string
 	content?: string
 	image?: string
+	image_name?: string
 	date_published?: string
 	tags?: []
 }

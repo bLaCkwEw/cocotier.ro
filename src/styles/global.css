@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 * {
-	@apply leading-7;
+	@apply leading-7 scroll-smooth;
 }
 
 h1,
@@ -12,7 +12,7 @@ h3,
 h4,
 h5,
 h6 {
-	@apply my-6 font-bold;
+	@apply my-6 font-bold relative;
 }
 
 h1 {

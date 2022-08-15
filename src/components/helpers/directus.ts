@@ -22,9 +22,4 @@ export const directus = {
 
 		return filtered_posts
 	},
-
-	getImage: async (id: string, imageName?: string) => {
-		let link = `${DIRECTUS_URL}/assets/${id}/?format=webp`
-		return link
-	},
 }

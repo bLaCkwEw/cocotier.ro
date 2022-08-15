@@ -30,15 +30,24 @@ const { post } = Astro.props
 	image={`https://tcwk2rc4.directus.app/assets/${post.image}?width=500`}
 >
 	<header>
-		<h1>{post.title}</h1>
+		<Markdown>
+			# {post.title}
+		</Markdown>
 	</header>
 
 	<img
-		src={`https://tcwk2rc4.directus.app/assets/${post.image}?width=500`}
-		alt=""
+		src={`https://tcwk2rc4.directus.app/assets/${post.image}/${post.image_name}?format=webp`}
+		alt={post.image_name}
 		width="200px"
 		height="auto"
+		loading="lazy"
 	/>
 
 	<Markdown content={post.content} />
 </BlogLayout>
+
+<style>
+	img {
+		@apply max-h-96;
+	}
+</style>
