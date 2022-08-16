@@ -1,9 +1,5 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro"
-
-const response = await fetch("https://tcwk2rc4.directus.app/items/blog_posts/3")
-const blogPost = await response.json()
-const date = new Date(blogPost.data.date_created)
 ---
 
 <BaseLayout title="Home">
