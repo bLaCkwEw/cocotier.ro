@@ -1,0 +1,19 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro"
+import { directus } from "@components/helpers/directus"
+import Tag from "@components/Tag.astro"
+import type { Post } from "@components/types"
+
+const posts = await directus.getPosts()
+const tags = posts.map((post: Post) => {
+	return post.tags
+})
+---
+
+<BaseLayout title="Tags">
+	<h1 class="text-left">Tags</h1>
+
+	<h2>
+		Post tags: {JSON.stringify(tags)}
+	</h2>
+</BaseLayout>

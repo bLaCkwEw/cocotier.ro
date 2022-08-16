@@ -10,5 +10,5 @@ export interface Post {
 	image?: string
 	image_name?: string
 	date_published?: string
-	tags?: []
+	tags?: string[]
 }
