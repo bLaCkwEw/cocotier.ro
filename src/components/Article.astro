@@ -12,15 +12,12 @@ const posted_on = new Date(date_published).toLocaleString("en-US", {
 })
 ---
 
-<a href={`blog/${slug}`} rel="prefetch">
-	<div class="lg:my-0 p-4 -ml-4 h-72 rounded-md bg-base-200">
-		<div>
-			<div>
-				<time class="text-gray-500" datetime={date_published}>{posted_on}</time>
-			</div>
-			<h2 class="link link-hover mt-2">{title}</h2>
-
-			<div class="leading-6">{description}</div>
-		</div>
-	</div>
+<a
+	href={`blog/${slug}`}
+	rel="prefetch"
+	class="lg:my-0 p-4 h-72 rounded-md bg-base-200"
+>
+	<time class="text-gray-500" datetime={date_published}>{posted_on}</time>
+	<h2 class="link link-hover mt-2">{title}</h2>
+	<div class="leading-6">{description}</div>
 </a>
