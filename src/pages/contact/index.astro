@@ -1,11 +1,12 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro"
+import Icon from "astro-icon"
 ---
 
 <BaseLayout title="Contact">
 	<h1 class="text-left">Contact</h1>
 
-	<form class="form-control gap-4" action="">
+	<form class="form-control gap-4" action={`${Astro.url.pathname}/success`}>
 		<div>
 			<label class="label" for="name">
 				<span class="label-text text-2xl">Name</span>
@@ -59,4 +60,10 @@ import BaseLayout from "@layouts/BaseLayout.astro"
 
 		<button class="btn btn-primary mt-4">submit</button>
 	</form>
+
+	<div
+		class="hidden lg:block lg:text-primary lg:absolute lg:top-1/4 lg:left-1/2 lg:max-w-md"
+	>
+		<Icon name="eva:message-square-fill" />
+	</div>
 </BaseLayout>
