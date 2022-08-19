@@ -1,7 +1,3 @@
 .btn {
-	@apply lowercase shadow-gray-700 shadow rounded-sm font-medium;
+	@apply w-fit lowercase shadow shadow-gray-700 rounded-sm font-medium text-base;
 }
-
-/* .language-id {
-	@apply hidden;
-} */
