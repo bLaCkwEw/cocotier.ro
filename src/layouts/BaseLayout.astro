@@ -1,0 +1,21 @@
+---
+const { title, description } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+
+		<title>{title + " - cocotier.ro"}</title>
+		<meta name="description" content={description} />
+	</head>
+	<body class="bg-slate-50 text-zinc-900 lg:mx-72">
+		<main class="px-2">
+			<slot />
+		</main>
+	</body>
+</html>

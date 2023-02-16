@@ -1,20 +1,25 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection, z } from "astro:content";
 
 const blog = defineCollection({
-	// Type-check frontmatter using a schema
 	schema: z.object({
-		title: z.string(),
-		description: z.string(),
-		// Transform string to Date object
-		pubDate: z
+		title: z.string().max(65, {
+			message: "Title must be less than 65 characters.",
+		}),
+		description: z.string().max(160, {
+			message: "Description must be less than 160 characters.",
+		}),
+		date_pub: z
 			.string()
 			.or(z.date())
 			.transform((val) => new Date(val)),
-		updatedDate: z
+		date_updated: z
 			.string()
-			.optional()
-			.transform((str) => (str ? new Date(str) : undefined)),
-		heroImage: z.string().optional(),
+			.or(z.date())
+			.transform((str) => (str ? new Date(str) : undefined))
+			.optional(),
+		cover_img: z.string().optional(),
+		img_alt: z.string().optional(),
+		draft: z.boolean().optional(),
 	}),
 });
 
