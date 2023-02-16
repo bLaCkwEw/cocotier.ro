@@ -1,73 +1,67 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-* {
-	@apply leading-7 scroll-smooth;
+/*
+  The CSS in this style tag is based off of Bear Blog's default CSS.
+  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
+  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
+ */
+body {
+	font-family: Verdana, sans-serif;
+	margin: auto;
+	padding: 20px;
+	max-width: 65ch;
+	text-align: left;
+	background-color: #fff;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	line-height: 1.5;
+	color: #444;
 }
-
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
-	@apply my-6 font-bold relative;
+h6,
+strong,
+b {
+	color: #222;
 }
-
-h1 {
-	@apply sm:text-5xl text-4xl text-center my-6;
+a {
+	color: #3273dc;
 }
-
-h2 {
-	@apply sm:text-4xl text-3xl;
+nav a {
+	margin-right: 10px;
 }
-
-h3 {
-	@apply sm:text-3xl text-2xl;
+textarea {
+	width: 100%;
+	font-size: 16px;
 }
-
-p {
-	@apply text-gray-700 my-5;
+input {
+	font-size: 16px;
 }
-
-p code {
-	@apply bg-base-200 p-1.5 rounded;
+content {
+	line-height: 1.6;
 }
-
+table {
+	width: 100%;
+}
+img {
+	max-width: 100%;
+	height: auto;
+}
+code {
+	padding: 2px 5px;
+	background-color: #f2f2f2;
+}
 pre {
-	@apply p-4 text-sm rounded-md my-4 whitespace-pre-wrap;
+	padding: 1rem;
 }
-
-article {
-	@apply max-w-full sm:max-w-2xl mx-auto;
+pre > code {
+	all: unset;
 }
-
-article a {
-	@apply link font-medium text-base-content;
-}
-
-article img {
-	@apply rounded-md w-full max-w-full sm:max-w-2xl mx-auto shadow-md shadow-secondary;
-}
-
-ol,
-ul {
-	@apply text-gray-700 ml-4;
-}
-
-ol {
-	@apply list-decimal;
-}
-
-ul {
-	@apply list-disc;
-}
-
 blockquote {
-	@apply border-l-4 border-l-base-200 pl-4;
-}
-
-blockquote p {
-	@apply py-4;
+	border: 1px solid #999;
+	color: #222;
+	padding: 2px 0px 2px 20px;
+	margin: 0px;
+	font-style: italic;
 }

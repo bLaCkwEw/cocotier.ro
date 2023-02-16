@@ -1,35 +1,13 @@
 ---
-import { Icon } from "astro-icon"
+const today = new Date();
 ---
 
-<footer
-	class="footer py-4 px-10 sm:px-28 border-t border-base-content bg-base-200"
->
-	<div>
-		<a href="/" rel="prefetch">
-			<img src="/favicon.png" alt="Logo" />
-			<p>cocotier.ro</p>
-		</a>
-	</div>
-	<div>
-		<span class="footer-title">socials</span>
-		<div class="grid grid-flow-col gap-2">
-			<a
-				target="_blank"
-				href="https://github.com/bLaCkwEw"
-				rel="noopener"
-				class="link link-hover"
-			>
-				<Icon pack="bytesize" name="github" size="32" />
-			</a>
-			<a
-				target="_blank"
-				href="https://twitter.com/bLaCkwEwGG"
-				rel="noopener"
-				class="link link-hover"
-			>
-				<Icon pack="bytesize" name="twitter" size="32" />
-			</a>
-		</div>
-	</div>
+<footer>
+	&copy; {today.getFullYear()} YOUR NAME HERE. All rights reserved.
 </footer>
+<style>
+	footer {
+		padding: 25px;
+		text-align: center;
+	}
+</style>
