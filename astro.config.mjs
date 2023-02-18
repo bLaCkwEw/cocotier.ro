@@ -5,6 +5,7 @@ import prefetch from "@astrojs/prefetch";
 import vercel from "@astrojs/vercel/static";
 import mdx from "@astrojs/mdx";
 
+import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeFigure from "rehype-figure";
 import remarkCapitalize from "remark-capitalize";
@@ -14,13 +15,9 @@ const site =
 
 // https://astro.build/config
 export default defineConfig({
-	// site: 'https://cocotier.ro',
 	site: site,
 	integrations: [
-		mdx({
-			remarkPlugins: [remarkCapitalize],
-			rehypePlugins: [[rehypeAutolinkHeadings, { behavior: "before" }], rehypeFigure],
-		}),
+		mdx(),
 		sitemap(),
 		prefetch({
 			selector: "a[href^='/']",
@@ -32,8 +29,17 @@ export default defineConfig({
 	adapter: vercel({
 		analytics: true,
 	}),
-	// markdown: {
-	// 	remarkPlugins: [remarkCapitalize],
-	// 	rehypePlugins: [rehypeFigure, [rehypeAutolinkHeadings, { behavior: "before" }]],
-	// },
+	markdown: {
+		remarkPlugins: [remarkCapitalize],
+		rehypePlugins: [
+			rehypeFigure,
+			rehypeSlug,
+			[
+				rehypeAutolinkHeadings,
+				{
+					behavior: "wrap",
+				},
+			],
+		],
+	},
 });
