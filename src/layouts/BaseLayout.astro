@@ -16,7 +16,7 @@ const { title, description } = Astro.props;
 		<title>{title ? title + " - cocotier.ro" : "" + "cocotier.ro"}</title>
 		<meta name="description" content={description} />
 	</head>
-	<body class="mx-auto max-w-2xl bg-slate-50 text-zinc-900">
+	<body class="mx-2 max-w-2xl bg-slate-50 text-zinc-900 sm:mx-auto">
 		<Nav />
 		<slot />
 		<Footer />
