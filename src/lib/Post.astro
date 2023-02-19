@@ -1,0 +1,37 @@
+---
+const { slug, title, description, cover_img, img_alt, date_pub } = Astro.props;
+---
+
+<article>
+	<a
+		href={process.env.VERCEL ? `${Astro.site}blog/${slug}` : `${Astro.url.pathname}blog/${slug}`}
+		class="prose mx-auto mb-4 flex flex-col items-center rounded-lg border border-slate-200 bg-white shadow hover:bg-slate-100 md:max-w-xl md:flex-row"
+	>
+		<img
+			class="mb-0 h-40 w-full rounded-t-lg object-cover md:h-52 md:w-56 md:rounded-none md:rounded-l-lg"
+			src={cover_img}
+			alt={img_alt}
+			title={img_alt}
+			loading="lazy"
+			width="224"
+			height="208"
+		/>
+		<div class="flex flex-col justify-between p-4 leading-normal">
+			<h1 class="mb-2 text-2xl font-bold tracking-tight text-zinc-900">
+				{title}
+			</h1>
+			<time class="" datetime={date_pub.toISOString()}
+				>{
+					new Date(date_pub).toLocaleDateString("en-US", {
+						year: "numeric",
+						month: "short",
+						day: "numeric",
+					})
+				}
+			</time>
+			<p>
+				{description}
+			</p>
+		</div>
+	</a>
+</article>

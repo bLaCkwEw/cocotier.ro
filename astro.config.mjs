@@ -1,22 +1,50 @@
 import { defineConfig } from "astro/config";
-import sitemap from "@astrojs/sitemap"; // Full Astro Configuration API Documentation:
-// https://docs.astro.build/reference/configuration-reference
-// @type-check enabled!
-// VSCode and other TypeScript-enabled text editors will provide auto-completion,
-// helpful tooltips, and warnings if your exported object is invalid.
-// You can disable this by removing "@ts-check" and `@type` comments below.
-// @ts-check
-// https://astro.build/config
-
+// Astro plugins
+import tailwind from "@astrojs/tailwind";
+import sitemap from "@astrojs/sitemap";
 import prefetch from "@astrojs/prefetch";
+import vercel from "@astrojs/vercel/static";
+import compress from "astro-compress";
+import mdx from "@astrojs/mdx";
+// Markdown plugins
+import rehypeSlug from "rehype-slug";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypeFigure from "rehype-figure";
+import lazyLoadPlugin from "rehype-plugin-image-native-lazy-loading";
+import remarkCapitalize from "remark-capitalize";
+
+const site =
+	process.env.VERCEL_ENV === "preview" ? "https://preview.cocotier.ro" : "https://cocotier.ro";
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://cocotier.ro",
+	site: site,
 	integrations: [
-		sitemap({
-			canonicalURL: "https://cocotier.ro",
+		mdx(),
+		sitemap(),
+		prefetch({
+			selector: "a[href^='/']",
+			throttle: 3,
 		}),
-		prefetch(),
+		tailwind(),
+		compress(),
 	],
+	output: "static",
+	adapter: vercel({
+		analytics: true,
+	}),
+	markdown: {
+		remarkPlugins: [remarkCapitalize],
+		rehypePlugins: [
+			rehypeFigure,
+			rehypeSlug,
+			[
+				rehypeAutolinkHeadings,
+				{
+					behavior: "wrap",
+				},
+			],
+			lazyLoadPlugin,
+		],
+	},
 });

@@ -1,24 +1,32 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro"
+import { getCollection } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Post from "@lib/Post.astro";
+
+const blog_posts = await getCollection("blog", ({ data }) => {
+	return data.draft !== true;
+});
+blog_posts.sort((a, b) => b.data.date_pub.getTime() - a.data.date_pub.getTime());
 ---
 
-<BaseLayout title="Home">
+<BaseLayout title="Home" description="Welcome to my website!">
+	<main>
+		<!-- Make header -->
+		<h1>Hello world!</h1>
 
-		<pre class="tree">
-            __ _.--..--._ _
-     .-' _/   _/\_   \_'-.
-    |__ /   _/\__/\_   \__|
-       |___/\_\__/  \___|
-              \__/
-              \__/
-               \__/
-                \__/
-             ____\__/___
-       . - '             ' -.
-      /                      \
-~~~~~~~  ~~~~~ ~~~~~  ~~~ ~~~  ~~~~~
-                   
-		</pre>
-		<h1 class="title">cocotier.ro</h1>
-
+		<section>
+			{
+				blog_posts.map((post) => (
+					<Post
+						slug={post.slug}
+						title={post.data.title}
+						description={post.data.description}
+						date_pub={post.data.date_pub}
+						cover_img={post.data.cover_img}
+						img_alt={post.data.img_alt}
+					/>
+				))
+			}
+		</section>
+	</main>
 </BaseLayout>

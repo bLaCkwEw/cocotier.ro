@@ -1,20 +1,24 @@
 ---
-import Nav from "../lib/Nav.astro"
-const {title} = Astro.props;
+import Nav from "@lib/Nav.astro";
+import Footer from "@lib/Footer.astro";
+
+const { title, description } = Astro.props;
 ---
 
-<html lang="ro">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/x-icon" href="/favicon.png" />
-    <meta name="viewport" content="width=device-width" />
-    <title>cocotier.ro - {title}</title>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
 
-    <link rel="stylesheet" href="/style.css" />
-  </head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="generator" content={Astro.generator} />
 
-  <body>
-      <Nav />
-      <slot />
-  </body>
+		<title>{title ? title + " - cocotier.ro" : "" + "cocotier.ro"}</title>
+		<meta name="description" content={description} />
+	</head>
+	<body class="mx-2 max-w-2xl bg-slate-50 text-zinc-900 md:mx-auto">
+		<Nav />
+		<slot />
+		<Footer />
+	</body>
 </html>
