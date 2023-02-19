@@ -4,7 +4,6 @@ import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import prefetch from "@astrojs/prefetch";
 import vercel from "@astrojs/vercel/static";
-import serviceWorker from "astrojs-service-worker";
 import compress from "astro-compress";
 import mdx from "@astrojs/mdx";
 // Markdown plugins
@@ -28,7 +27,6 @@ export default defineConfig({
 			throttle: 3,
 		}),
 		tailwind(),
-		serviceWorker(),
 		compress(),
 	],
 	output: "static",

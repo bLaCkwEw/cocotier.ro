@@ -1,36 +1,37 @@
 ---
-const { slug, title, description, cover_img, img_alt, date_pub, date_updated } = Astro.props;
+const { slug, title, description, cover_img, img_alt, date_pub } = Astro.props;
 ---
 
-<article class="mb-4 max-w-sm rounded bg-slate-200 p-2 shadow-sm lg:mx-0">
-	<a href={process.env.VERCEL ? `${Astro.site}blog/${slug}` : `${Astro.url.pathname}blog/${slug}`}>
+<article>
+	<a
+		href={process.env.VERCEL ? `${Astro.site}blog/${slug}` : `${Astro.url.pathname}blog/${slug}`}
+		class="prose mx-auto mb-4 flex flex-col items-center rounded-lg border border-slate-200 bg-white shadow hover:bg-slate-100 md:max-w-xl md:flex-row"
+	>
 		<img
+			class="mb-0 h-40 w-full rounded-t-lg object-cover md:h-52 md:w-56 md:rounded-none md:rounded-l-lg"
 			src={cover_img}
 			alt={img_alt}
+			title={img_alt}
 			loading="lazy"
-			width="500"
-			height="200"
-			class="mx-auto my-4 h-auto w-full rounded shadow-sm"
+			width="224"
+			height="208"
 		/>
-		<h1
-			class="w-max border-b-2 border-zinc-800 text-4xl font-bold transition hover:border-blue-500 hover:text-blue-500"
-		>
-			{title}
-		</h1>
+		<div class="flex flex-col justify-between p-4 leading-normal">
+			<h1 class="mb-2 text-2xl font-bold tracking-tight text-zinc-900">
+				{title}
+			</h1>
+			<time class="" datetime={date_pub.toISOString()}
+				>{
+					new Date(date_pub).toLocaleDateString("en-US", {
+						year: "numeric",
+						month: "short",
+						day: "numeric",
+					})
+				}
+			</time>
+			<p>
+				{description}
+			</p>
+		</div>
 	</a>
-	<time class="text-zinc-700" datetime={date_pub.toISOString()}
-		>{
-			new Date(date_pub).toLocaleDateString("en-US", {
-				year: "numeric",
-				month: "short",
-				day: "numeric",
-			})
-		}</time
-	>
-	<!-- { date_updated ? <time class="text-zinc-700" datetime={date_updated}>{new Date(date_updated).toLocaleDateString("en-US", {
-		year: "numeric",
-  	month: "long",
-  	day: "numeric",
-	})}</time> : null } -->
-	<p class="mt-2 text-zinc-800">{description}</p>
 </article>

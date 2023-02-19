@@ -10,9 +10,10 @@ blog_posts.sort((a, b) => b.data.date_pub.getTime() - a.data.date_pub.getTime())
 ---
 
 <BaseLayout title="Home" description="Welcome to my website!">
-	<h1>Hello world!</h1>
-
 	<main>
+		<!-- Make header -->
+		<h1>Hello world!</h1>
+
 		<section>
 			{
 				blog_posts.map((post) => (
@@ -21,7 +22,6 @@ blog_posts.sort((a, b) => b.data.date_pub.getTime() - a.data.date_pub.getTime())
 						title={post.data.title}
 						description={post.data.description}
 						date_pub={post.data.date_pub}
-						date_updated={post.data.date_updated}
 						cover_img={post.data.cover_img}
 						img_alt={post.data.img_alt}
 					/>
