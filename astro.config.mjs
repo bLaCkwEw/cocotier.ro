@@ -41,10 +41,34 @@ export default defineConfig({
 			[
 				rehypeAutolinkHeadings,
 				{
-					behavior: "wrap",
+					behavior: "append",
+					content: {
+						type: "element",
+						tagName: "span",
+						properties: {
+							className: ["mx-2 text-blue-500"],
+						},
+						children: [
+							{
+								type: "text",
+								value: "#",
+							},
+						],
+					},
 				},
 			],
 			lazyLoadPlugin,
 		],
 	},
 });
+
+// {
+//   type: 'element',
+//   tagName: 'a',
+//   properties: {
+//     href: 'https://alpha.com',
+//     className: ['bravo'],
+//     download: true
+//   },
+//   children: []
+// }
