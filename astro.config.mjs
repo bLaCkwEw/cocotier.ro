@@ -27,7 +27,9 @@ export default defineConfig({
 			throttle: 3,
 		}),
 		tailwind(),
-		compress(),
+		compress({
+			logger: 1,
+		}),
 	],
 	output: "static",
 	adapter: vercel({
