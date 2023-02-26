@@ -1,3 +1,8 @@
-<nav class="my-2 border-b-2 border-blue-500 py-2">
+---
+import ThemeToggle from "@lib/ThemeToggle.astro";
+---
+
+<nav class="my-2 flex justify-between border-b-2 border-blue-500 py-2">
 	<a href="/" class="text-lg transition hover:text-blue-500 active:text-blue-500">cocotier.ro</a>
+	<ThemeToggle />
 </nav>

@@ -12,7 +12,6 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeFigure from "rehype-figure";
 import lazyLoadPlugin from "rehype-plugin-image-native-lazy-loading";
 import remarkCapitalize from "remark-capitalize";
-
 const site =
 	process.env.VERCEL_ENV === "preview" ? "https://preview.cocotier.ro" : "https://cocotier.ro";
 
@@ -21,12 +20,12 @@ export default defineConfig({
 	site: site,
 	integrations: [
 		mdx(),
-		sitemap(),
+		tailwind(),
 		prefetch({
 			selector: "a[href^='/']",
 			throttle: 3,
 		}),
-		tailwind(),
+		sitemap(),
 		compress({
 			logger: 1,
 		}),
@@ -44,6 +43,7 @@ export default defineConfig({
 				rehypeAutolinkHeadings,
 				{
 					behavior: "append",
+					properties: {},
 					content: {
 						type: "element",
 						tagName: "span",
@@ -63,14 +63,3 @@ export default defineConfig({
 		],
 	},
 });
-
-// {
-//   type: 'element',
-//   tagName: 'a',
-//   properties: {
-//     href: 'https://alpha.com',
-//     className: ['bravo'],
-//     download: true
-//   },
-//   children: []
-// }

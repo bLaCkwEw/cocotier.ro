@@ -1,0 +1,19 @@
+---
+import { Icon } from "astro-icon";
+---
+
+<button onclick="toggle_theme()" class="flex transition hover:text-blue-500">
+	<Icon name="bi:sun" width="16" />
+</button>
+
+<script is:inline>
+	function toggle_theme() {
+		if (document.documentElement.classList.contains("dark")) {
+			localStorage.theme = "light";
+			document.documentElement.classList.remove("dark");
+		} else {
+			localStorage.theme = "dark";
+			document.documentElement.classList.add("dark");
+		}
+	}
+</script>
