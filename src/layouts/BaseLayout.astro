@@ -5,11 +5,7 @@ import Footer from "@lib/Footer.astro";
 const { title, description } = Astro.props;
 ---
 
-<<<<<<< HEAD
-<html lang="en">
-=======
 <html lang="en" class="scroll-smooth">
->>>>>>> preview
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/png" href="/favicon.png" />
@@ -19,10 +15,6 @@ const { title, description } = Astro.props;
 
 		<title>{title ? title + " - cocotier.ro" : "" + "cocotier.ro"}</title>
 		<meta name="description" content={description} />
-<<<<<<< HEAD
-	</head>
-	<body class="mx-2 max-w-2xl bg-slate-50 text-zinc-900 md:mx-auto">
-=======
 		<script is:inline>
 			if (
 				localStorage.theme === "dark" ||
@@ -37,7 +29,6 @@ const { title, description } = Astro.props;
 	<body
 		class="mx-2 max-w-2xl bg-slate-50 text-zinc-900 dark:bg-zinc-900 dark:text-slate-50 md:mx-auto"
 	>
->>>>>>> preview
 		<Nav />
 		<slot />
 		<Footer />

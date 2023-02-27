@@ -4,13 +4,8 @@ const { slug, title, description, cover_img, img_alt, date_pub } = Astro.props;
 
 <article>
 	<a
-<<<<<<< HEAD
-		href={process.env.VERCEL ? `${Astro.site}blog/${slug}` : `${Astro.url.pathname}blog/${slug}`}
-		class="prose mx-auto mb-4 flex flex-col items-center rounded-lg border border-slate-200 bg-white shadow hover:bg-slate-100 md:max-w-xl md:flex-row"
-=======
 		href={"blog/" + slug}
 		class="prose prose-zinc mx-auto mb-4 flex flex-col items-center rounded-lg border bg-slate-50 shadow dark:prose-invert hover:bg-slate-200 focus:bg-slate-200 active:bg-slate-200 dark:border-zinc-700 dark:bg-zinc-900 dark:hover:bg-zinc-800 dark:focus:bg-zinc-800 dark:active:bg-zinc-800 md:max-w-xl md:flex-row"
->>>>>>> preview
 	>
 		<img
 			class="mb-0 h-40 w-full rounded-t-lg object-cover md:h-52 md:w-56 md:rounded-none md:rounded-l-lg"
@@ -22,11 +17,7 @@ const { slug, title, description, cover_img, img_alt, date_pub } = Astro.props;
 			height="208"
 		/>
 		<div class="flex flex-col justify-between p-4 leading-normal">
-<<<<<<< HEAD
-			<h1 class="mb-2 text-2xl font-bold tracking-tight text-zinc-900">
-=======
 			<h1 class="mb-2 text-2xl font-bold tracking-tight">
->>>>>>> preview
 				{title}
 			</h1>
 			<time class="" datetime={date_pub.toISOString()}
