@@ -12,7 +12,6 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeFigure from "rehype-figure";
 import lazyLoadPlugin from "rehype-plugin-image-native-lazy-loading";
 import remarkCapitalize from "remark-capitalize";
-
 const site =
 	process.env.VERCEL_ENV === "preview" ? "https://preview.cocotier.ro" : "https://cocotier.ro";
 
@@ -21,13 +20,15 @@ export default defineConfig({
 	site: site,
 	integrations: [
 		mdx(),
-		sitemap(),
+		tailwind(),
 		prefetch({
 			selector: "a[href^='/']",
 			throttle: 3,
 		}),
-		tailwind(),
-		compress(),
+		sitemap(),
+		compress({
+			logger: 1,
+		}),
 	],
 	output: "static",
 	adapter: vercel({
@@ -41,7 +42,21 @@ export default defineConfig({
 			[
 				rehypeAutolinkHeadings,
 				{
-					behavior: "wrap",
+					behavior: "append",
+					properties: {},
+					content: {
+						type: "element",
+						tagName: "span",
+						properties: {
+							className: ["mx-2 text-blue-500"],
+						},
+						children: [
+							{
+								type: "text",
+								value: "#",
+							},
+						],
+					},
 				},
 			],
 			lazyLoadPlugin,

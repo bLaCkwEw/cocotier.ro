@@ -11,9 +11,9 @@ blog_posts.sort((a, b) => b.data.date_pub.getTime() - a.data.date_pub.getTime())
 
 <BaseLayout title="Home" description="Welcome to my website!">
 	<main>
-		<!-- Make header -->
-		<h1>Hello world!</h1>
-
+		<h1 class="my-24 text-center font-mono text-6xl motion-safe:animate-bounce md:text-8xl">
+			Welcome
+		</h1>
 		<section>
 			{
 				blog_posts.map((post) => (
