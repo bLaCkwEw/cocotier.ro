@@ -2,7 +2,11 @@
 import { Icon } from "astro-icon";
 ---
 
-<button onclick="toggle_theme()" class="flex transition hover:text-blue-500">
+<button
+	onclick="toggle_theme()"
+	class="flex transition hover:text-blue-500"
+	aria-label="Theme Toggle"
+>
 	<Icon name="bi:sun" width="16" />
 </button>
 
