@@ -1,11 +1,11 @@
 {
 	"name": "cocotier.ro",
 	"type": "module",
-	"version": "0.0.2",
+	"version": "2.0.1",
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
-		"build": "astro build",
+		"build": "astro build && jampack ./.vercel/output/static/",
 		"preview": "astro preview",
 		"astro": "astro",
 		"check": "astro check",
@@ -19,16 +19,15 @@
 		"@astrojs/tailwind": "^3.0.1",
 		"@astrojs/vercel": "^3.1.3",
 		"astro": "^2.0.16",
-		"astro-compress": "^1.1.35",
 		"astro-icon": "^0.8.0",
 		"rehype-autolink-headings": "^6.1.1",
 		"rehype-figure": "^1.0.1",
-		"rehype-plugin-image-native-lazy-loading": "^1.2.0",
 		"rehype-slug": "^5.1.0",
 		"remark-capitalize": "^1.1.0",
 		"tailwindcss": "^3.2.7"
 	},
 	"devDependencies": {
+		"@divriots/jampack": "^0.9.4",
 		"@tailwindcss/typography": "^0.5.9",
 		"prettier": "^2.8.4",
 		"prettier-plugin-astro": "^0.8.0",
