@@ -1,0 +1,26 @@
+---
+const { post } = Astro.props;
+---
+
+<time datetime={post.data.date_pub.getTime()} class="block">
+	Published on {
+		post.data.date_pub.toLocaleString("en-us", {
+			day: "numeric",
+			month: "long",
+			year: "numeric",
+		})
+	}
+</time>
+
+{
+	post.data.date_updated ? (
+		<time datetime={post.data.date_updated.getTime()} class="block">
+			Updated on
+			{post.data.date_updated.toLocaleString("en-us", {
+				day: "numeric",
+				month: "long",
+				year: "numeric",
+			})}
+		</time>
+	) : null
+}

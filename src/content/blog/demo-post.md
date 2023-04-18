@@ -2,7 +2,7 @@
 title: Demo Post
 description: This is the post description. And it goes into detail about stuff and stuff and moreeeeeeeee stuff.
 date_pub: "2023.02.10"
-date_updated: "2023.01.16"
+date_updated: "2023.03.16"
 cover_img: placeholder.jpg
 img_alt: image description
 draft: true
