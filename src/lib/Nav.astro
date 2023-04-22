@@ -3,8 +3,12 @@ import ThemeToggle from "@lib/ThemeToggle.astro";
 ---
 
 <nav class="my-2 flex justify-between border-b-2 border-blue-500 py-2">
-	<a href="/" class="flex items-center text-lg transition hover:text-blue-500 active:text-blue-500">
+	<a href="/" class="flex transition hover:text-blue-500">
 		<img src="/favicon.png" alt="Favicon" title="Pixel Art Coconut Tree" width="32" height="32" />
 	</a>
-	<ThemeToggle />
+	<div class="flex items-center gap-4">
+		<a href="/blog" class="transition hover:text-blue-500">Articles</a>
+		<a href="/notes" class="transition hover:text-blue-500">Notes</a>
+		<ThemeToggle />
+	</div>
 </nav>
