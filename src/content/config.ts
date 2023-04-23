@@ -21,4 +21,16 @@ const blog = defineCollection({
 	}),
 });
 
-export const collections = { blog };
+const notes = defineCollection({
+	schema: z.object({
+		date_pub: z
+			.string()
+			.or(z.date())
+			.transform((val) => new Date(val)),
+		content: z.string(),
+		img: z.string().optional(),
+		img_alt: z.string().optional(),
+	}),
+});
+
+export const collections = { blog, notes };

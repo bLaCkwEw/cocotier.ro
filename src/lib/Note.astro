@@ -1,0 +1,30 @@
+---
+const { date_pub, content, img, img_alt, slug } = Astro.props;
+---
+
+<!--
+	TODO:
+	- Add to rss feed
+	- Add markdown support
+-->
+<a href={"#" + slug} id={slug}>
+	<article
+		class="prose prose-zinc mx-auto my-4 border border-zinc-900 p-2 shadow shadow-slate-300 dark:border-slate-50 dark:shadow-zinc-700"
+	>
+		<p class="overflow-clip overflow-ellipsis text-lg text-zinc-900 dark:text-slate-200">
+			{content}
+		</p>
+
+		{img ? <img src={img} alt={img_alt} decoding="async" loading="lazy" class="mx-auto" /> : null}
+
+		<time class="text-xs text-zinc-800 dark:text-slate-200" datetime={date_pub.toISOString()}>
+			{
+				new Date(date_pub).toLocaleDateString("en-US", {
+					year: "numeric",
+					month: "short",
+					day: "numeric",
+				})
+			}
+		</time>
+	</article>
+</a>

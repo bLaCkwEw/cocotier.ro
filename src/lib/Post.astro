@@ -5,10 +5,12 @@ const { slug, title, description, date_pub } = Astro.props;
 <article class="my-4">
 	<a
 		href={"blog/" + slug}
-		class="prose prose-zinc mx-auto block rounded-md border border-zinc-900 bg-slate-50 p-4 shadow hover:bg-slate-200 focus:bg-slate-200 dark:border-slate-50 dark:bg-zinc-900 dark:hover:bg-zinc-800 dark:focus:bg-zinc-800"
+		class="prose prose-zinc mx-auto block rounded-md border border-zinc-900 bg-slate-50 p-4 shadow shadow-slate-300 hover:bg-slate-200 focus:bg-slate-200 dark:border-slate-50 dark:bg-zinc-900 dark:shadow-zinc-700 dark:hover:bg-zinc-800 dark:focus:bg-zinc-800"
 	>
 		<div class="leading-normal">
-			<h3 class="mb-2 mt-0 text-2xl text-zinc-900 dark:text-slate-50">
+			<h3
+				class="mb-2 mt-0 overflow-clip overflow-ellipsis text-2xl text-zinc-900 dark:text-slate-50"
+			>
 				{title}
 			</h3>
 			<time class="text-xs text-zinc-800 dark:text-slate-200" datetime={date_pub.toISOString()}
@@ -21,7 +23,7 @@ const { slug, title, description, date_pub } = Astro.props;
 				}
 			</time>
 		</div>
-		<p class="text-zinc-800 dark:text-slate-200">
+		<p class="overflow-clip overflow-ellipsis text-zinc-800 dark:text-slate-200">
 			{description}
 		</p>
 	</a>
