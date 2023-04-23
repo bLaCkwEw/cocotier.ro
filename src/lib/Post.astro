@@ -1,26 +1,19 @@
 ---
-const { slug, title, description, cover_img, img_alt, date_pub } = Astro.props;
+const { slug, title, description, date_pub } = Astro.props;
 ---
 
-<article>
+<article class="my-4">
 	<a
 		href={"blog/" + slug}
-		class="prose prose-zinc mx-auto mb-4 flex flex-col items-center rounded-lg border bg-slate-50 shadow dark:prose-invert hover:bg-slate-200 focus:bg-slate-200 active:bg-slate-200 dark:border-zinc-700 dark:bg-zinc-900 dark:hover:bg-zinc-800 dark:focus:bg-zinc-800 dark:active:bg-zinc-800 md:max-w-xl md:flex-row"
+		class="prose prose-zinc mx-auto block rounded-md border border-zinc-900 bg-slate-50 p-4 shadow shadow-slate-300 hover:bg-slate-200 focus:bg-slate-200 dark:border-slate-50 dark:bg-zinc-900 dark:shadow-zinc-700 dark:hover:bg-zinc-800 dark:focus:bg-zinc-800"
 	>
-		<img
-			class="mb-0 h-40 w-full rounded-t-lg object-cover md:h-52 md:w-56 md:rounded-none md:rounded-l-lg"
-			src={cover_img}
-			alt={img_alt}
-			title={img_alt}
-			loading="lazy"
-			width="224"
-			height="208"
-		/>
-		<div class="flex flex-col justify-between p-4 leading-normal">
-			<h1 class="mb-2 text-2xl font-bold tracking-tight">
+		<div class="leading-normal">
+			<h3
+				class="mb-2 mt-0 overflow-clip overflow-ellipsis text-2xl text-zinc-900 dark:text-slate-50"
+			>
 				{title}
-			</h1>
-			<time class="" datetime={date_pub.toISOString()}
+			</h3>
+			<time class="text-xs text-zinc-800 dark:text-slate-200" datetime={date_pub.toISOString()}
 				>{
 					new Date(date_pub).toLocaleDateString("en-US", {
 						year: "numeric",
@@ -29,9 +22,9 @@ const { slug, title, description, cover_img, img_alt, date_pub } = Astro.props;
 					})
 				}
 			</time>
-			<p>
-				{description}
-			</p>
 		</div>
+		<p class="overflow-clip overflow-ellipsis text-zinc-800 dark:text-slate-200">
+			{description}
+		</p>
 	</a>
 </article>

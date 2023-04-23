@@ -1,0 +1,25 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Note from "@lib/Note.astro";
+
+const notes = await getCollection("notes");
+notes.sort((a, b) => b.data.date_pub.getTime() - a.data.date_pub.getTime());
+---
+
+<BaseLayout>
+	<main>
+		<h2 class="my-16 text-center text-3xl font-bold">Notes</h2>
+		{
+			notes.map((note) => (
+				<Note
+					date_pub={note.data.date_pub}
+					content={note.data.content}
+					img={note.data.img}
+					img_alt={note.data.img_alt}
+					slug={note.slug}
+				/>
+			))
+		}
+	</main>
+</BaseLayout>

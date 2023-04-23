@@ -4,20 +4,23 @@ import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import prefetch from "@astrojs/prefetch";
 import vercel from "@astrojs/vercel/static";
-import mdx from "@astrojs/mdx";
 // Markdown plugins
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeFigure from "rehype-figure";
 import remarkCapitalize from "remark-capitalize";
+
 const site =
 	process.env.VERCEL_ENV === "preview" ? "https://preview.cocotier.ro" : "https://cocotier.ro";
 
 // https://astro.build/config
 export default defineConfig({
 	site: site,
+	output: "static",
+	adapter: vercel({
+		analytics: true,
+	}),
 	integrations: [
-		mdx(),
 		tailwind(),
 		prefetch({
 			selector: "a[href^='/']",
@@ -25,10 +28,6 @@ export default defineConfig({
 		}),
 		sitemap(),
 	],
-	output: "static",
-	adapter: vercel({
-		analytics: true,
-	}),
 	markdown: {
 		remarkPlugins: [remarkCapitalize],
 		rehypePlugins: [
