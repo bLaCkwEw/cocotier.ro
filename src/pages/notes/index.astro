@@ -7,7 +7,10 @@ const notes = await getCollection("notes");
 notes.sort((a, b) => b.data.date_pub.getTime() - a.data.date_pub.getTime());
 ---
 
-<BaseLayout>
+<BaseLayout
+	title="Notes"
+	description="Welcome to the notes page of cocotier.ro, where I share my thoughts and ideas on a variety of topics from tech and marketing to personal stories and internet debates."
+>
 	<main>
 		<h2 class="my-16 text-center text-3xl font-bold">Notes</h2>
 		{

@@ -1,13 +1,1 @@
 <svg width="20" height="10" viewBox="0 0 20 10" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="10"><path fill="none" d="M0 0h20v10H0z"/><clipPath id="a"><path d="M0 0h20v10H0z"/></clipPath><g clip-path="url(#a)"><path d="M20 7.384c-4.999-.001-5-4.768-9.999-4.768C5 2.616 5 7.384 0 7.384" fill="none" stroke-width="3" stroke="#3b82f6"/></g></svg>
-<!--
-data:image/svg+xml,%3Csvg width='20' height='10' viewBox='0 0 20 10' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd' stroke-miterlimit='10'%3E%3Cpath fill='none' d='M0 0h20v10H0z'/%3E%3CclipPath id='a'%3E%3Cpath d='M0 0h20v10H0z'/%3E%3C/clipPath%3E%3Cg clip-path='url(%23a)'%3E%3Cpath d='M20 7.384c-4.999-.001-5-4.768-9.999-4.768C5 2.616 5 7.384 0 7.384' fill='none' stroke-width='3' stroke='%233b82f6'/%3E%3C/g%3E%3C/svg%3E
--->
-<!--
-hr {
-  mask: radial-gradient(14.71px at 50% calc(100% + 7.00px),#0000 calc(99% - 5px),#000 calc(101% - 5px) 99%,#0000 101%) calc(50% - 20px) calc(50% - 7.5px + .5px)/40px 15px repeat-x, radial-gradient(14.71px at 50% -7px,#0000 calc(99% - 5px),#000 calc(101% - 5px) 99%,#0000 101%) 50% calc(50% + 7.5px)/40px 15px repeat-x;
-  background: #3b82f6;
-  width:80%;
-  height: 1rem;
-}
-
--->

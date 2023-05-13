@@ -1,21 +1,28 @@
 ---
 import Nav from "@lib/Nav.astro";
 import Footer from "@lib/Footer.astro";
+import { SEOMetadata } from "astro-seo-metadata";
 
-const { title, description } = Astro.props;
+const { title, description, image } = Astro.props;
 ---
 
 <html lang="en" class="scroll-smooth">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/png" href="/favicon.png" />
-		<link rel="sitemap" href="/sitemap-index.xml" />
-
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="generator" content={Astro.generator} />
 
-		<title>{title ? title + " - cocotier.ro" : "" + "cocotier.ro"}</title>
-		<meta name="description" content={description} />
+		<SEOMetadata
+			title={title ? title + " - cocotier.ro" : "" + "cocotier.ro"}
+			description={description}
+			image={image}
+			favicon={"/favicon.png"}
+			author={"bLaCkwEw"}
+			canonicalUrl={Astro.url.toString()}
+			type={"website"}
+			astroGenerator={true}
+		/>
+
+		<!-- Theme toggle -->
 		<script is:inline>
 			if (
 				localStorage.theme === "dark" ||
@@ -28,7 +35,7 @@ const { title, description } = Astro.props;
 		</script>
 	</head>
 	<body
-		class="mx-2 max-w-2xl bg-slate-50 text-zinc-900 dark:bg-zinc-900 dark:text-slate-50 md:mx-auto"
+		class="mx-2 max-w-2xl bg-stone-50 text-zinc-900 dark:bg-zinc-900 dark:text-stone-50 md:mx-auto"
 	>
 		<Nav />
 		<slot />

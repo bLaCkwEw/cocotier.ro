@@ -20,11 +20,20 @@ const { Content } = await post.render();
 
 <BaseLayout title={post.data.title} description={post.data.description}>
 	<main
-		class="prose prose-zinc max-w-none dark:prose-invert lg:prose-lg first:prose-h1:mb-0 first:prose-h1:font-mono prose-a:transition hover:prose-a:text-blue-500 focus:prose-a:text-blue-500 active:prose-a:text-blue-500 prose-a:prose-headings:text-transparent prose-a:prose-headings:no-underline prose-a:hover:prose-headings:text-blue-500 hover:prose-a:prose-headings:underline prose-figcaption:text-center prose-figcaption:italic prose-code:rounded prose-code:bg-slate-200 prose-code:px-1 prose-code:before:content-none prose-code:after:content-none prose-pre:shadow prose-code:prose-pre:bg-inherit prose-code:prose-pre:px-0 prose-img:mx-auto prose-img:aspect-video prose-img:max-h-80 prose-img:rounded prose-img:bg-slate-200 prose-img:shadow prose-hr:mx-auto prose-hr:h-3 prose-hr:w-full prose-hr:border-none prose-hr:bg-[url('/hr.svg')] prose-hr:bg-contain dark:prose-code:bg-zinc-800 dark:prose-code:prose-pre:bg-inherit dark:prose-img:bg-zinc-800 md:mx-auto md:p-0"
+		class="prose prose-zinc max-w-none dark:prose-invert lg:prose-lg first:prose-h1:mb-0 first:prose-h1:font-mono prose-a:transition hover:prose-a:text-blue-500 focus:prose-a:text-blue-500 active:prose-a:text-blue-500 prose-a:prose-headings:text-transparent prose-a:prose-headings:no-underline prose-a:hover:prose-headings:text-blue-500 hover:prose-a:prose-headings:underline prose-figcaption:text-center prose-figcaption:italic prose-code:rounded prose-code:bg-stone-200 prose-code:px-1 prose-code:before:content-none prose-code:after:content-none prose-pre:shadow prose-code:prose-pre:bg-inherit prose-code:prose-pre:px-0 prose-img:mx-auto prose-img:aspect-video prose-img:max-h-80 prose-img:rounded prose-img:bg-stone-200 prose-img:shadow prose-hr:mx-auto prose-hr:h-3 prose-hr:w-full prose-hr:border-none dark:prose-code:bg-zinc-800 dark:prose-code:prose-pre:bg-inherit dark:prose-img:bg-zinc-800 md:mx-auto md:p-0"
 	>
 		<Header title={post.data.title} />
+
 		<hr />
+		<style>
+			hr {
+				background-image: url("data:image/svg+xml,%3Csvg width='20' height='10' viewBox='0 0 20 10' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd' stroke-miterlimit='10'%3E%3Cpath fill='none' d='M0 0h20v10H0z'/%3E%3CclipPath id='a'%3E%3Cpath d='M0 0h20v10H0z'/%3E%3C/clipPath%3E%3Cg clip-path='url(%23a)'%3E%3Cpath d='M20 7.384c-4.999-.001-5-4.768-9.999-4.768C5 2.616 5 7.384 0 7.384' fill='none' stroke-width='3' stroke='%233b82f6'/%3E%3C/g%3E%3C/svg%3E");
+				background-size: contain;
+			}
+		</style>
+
 		<Content />
+
 		<Time post={post} />
 	</main>
 </BaseLayout>

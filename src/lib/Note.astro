@@ -9,15 +9,15 @@ const { date_pub, content, img, img_alt, slug } = Astro.props;
 -->
 <a href={"#" + slug} id={slug}>
 	<article
-		class="prose prose-zinc mx-auto my-4 border border-zinc-900 p-2 shadow shadow-slate-300 dark:border-slate-50 dark:shadow-zinc-700"
+		class="prose prose-zinc mx-auto my-4 border border-zinc-900 p-2 shadow shadow-stone-300 dark:border-stone-50 dark:shadow-zinc-700"
 	>
-		<p class="overflow-clip overflow-ellipsis text-lg text-zinc-900 dark:text-slate-200">
+		<p class="overflow-clip overflow-ellipsis text-lg text-zinc-900 dark:text-stone-200">
 			{content}
 		</p>
 
 		{img ? <img src={img} alt={img_alt} decoding="async" loading="lazy" class="mx-auto" /> : null}
 
-		<time class="text-xs text-zinc-800 dark:text-slate-200" datetime={date_pub.toISOString()}>
+		<time class="text-xs text-zinc-800 dark:text-stone-200" datetime={date_pub.toISOString()}>
 			{
 				new Date(date_pub).toLocaleDateString("en-US", {
 					year: "numeric",

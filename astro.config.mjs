@@ -17,9 +17,7 @@ const site =
 export default defineConfig({
 	site: site,
 	output: "static",
-	adapter: vercel({
-		analytics: true,
-	}),
+	adapter: vercel(),
 	integrations: [
 		tailwind(),
 		prefetch({
