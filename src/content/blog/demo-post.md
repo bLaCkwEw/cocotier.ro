@@ -3,7 +3,7 @@ title: Demo Post
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur.
 date_pub: "2023.02.10"
 date_updated: "2023.01.16"
-# draft: true
+draft: true
 ---
 
 ## h2 heading
