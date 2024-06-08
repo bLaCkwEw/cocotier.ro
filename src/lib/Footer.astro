@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 ---
 
 <footer class="mb-4 mt-8 p-2 text-center text-xs">
@@ -15,7 +15,7 @@ import { Icon } from "astro-icon";
 	</div>
 	<div class="my-2 flex justify-center gap-2">
 		<a href="/rss.xml" class="transition hover:text-blue-500 active:text-blue-500">
-			<Icon name="bi:rss" width="16" />
+			<Icon name="bi:rss" size={16} />
 		</a>
 		<a
 			href="https://github.com/bLaCkwEw"
@@ -23,15 +23,7 @@ import { Icon } from "astro-icon";
 			rel="noreferer noopener"
 			class="transition hover:text-blue-500 active:text-blue-500"
 		>
-			<Icon name="bi:github" width="16" />
-		</a>
-		<a
-			href="https://twitter.com/bLaCkwEwGG"
-			target="_blank"
-			rel="noreferer noopener"
-			class="transition hover:text-blue-500 active:text-blue-500"
-		>
-			<Icon name="bi:twitter" width="16" />
+			<Icon name="bi:github" size={16} />
 		</a>
 		<a
 			href="https://instagram.com/cocotier.ro"
@@ -39,7 +31,7 @@ import { Icon } from "astro-icon";
 			rel="noreferer noopener"
 			class="transition hover:text-blue-500 active:text-blue-500"
 		>
-			<Icon name="bi:instagram" width="16" />
+			<Icon name="bi:instagram" size={16} />
 		</a>
 	</div>
 	<a href="/sitemap-index.xml" class="transition hover:text-blue-500 active:text-blue-500">

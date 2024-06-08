@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 ---
 
 <button
@@ -7,7 +7,7 @@ import { Icon } from "astro-icon";
 	class="flex transition hover:text-blue-500"
 	aria-label="Theme Toggle"
 >
-	<Icon name="bi:sun" width="16" />
+	<Icon name="bi:sun" size={16} />
 </button>
 
 <script is:inline>

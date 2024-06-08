@@ -2,8 +2,8 @@ import { defineConfig } from "astro/config";
 // Astro plugins
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
-import prefetch from "@astrojs/prefetch";
 import vercel from "@astrojs/vercel/static";
+import icon from "astro-icon";
 // Markdown plugins
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
@@ -18,14 +18,10 @@ export default defineConfig({
 	site: site,
 	output: "static",
 	adapter: vercel(),
-	integrations: [
-		tailwind(),
-		prefetch({
-			selector: "a[href^='/']",
-			throttle: 3,
-		}),
-		sitemap(),
-	],
+	prefetch: {
+		prefetchAll: true,
+	},
+	integrations: [tailwind(), sitemap(), icon()],
 	markdown: {
 		remarkPlugins: [remarkCapitalize],
 		rehypePlugins: [
