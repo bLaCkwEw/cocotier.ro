@@ -5,7 +5,6 @@
 	"trailingComma": "es5",
 	"printWidth": 100,
 	"plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
-	"pluginSearchDirs": ["."],
 	"overrides": [
 		{ "files": "*.svelte", "options": { "parser": "svelte" } },
 		{ "files": "*.astro", "options": { "parser": "astro" } }

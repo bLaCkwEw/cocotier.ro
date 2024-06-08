@@ -9,7 +9,7 @@
 		"preview": "astro preview",
 		"astro": "astro",
 		"check": "astro check",
-		"format": "prettier --plugin-search-dir . --write ."
+		"format": "prettier --write ."
 	},
 	"dependencies": {
 		"@astrojs/rss": "^4.0.6",
