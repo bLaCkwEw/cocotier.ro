@@ -25,13 +25,12 @@ export async function GET(context: { site: any }) {
 	const blog = await getCollection("blog");
 	return rss({
 		title: "Home - cocotier.ro",
-		description:
-			"Welcome to cocotier.ro, where I share my passion for technology, marketing, and everything in between.",
+		description: "Personal website where I write about anything and everything.",
 		site: context.site,
 		items: blog.map((post) => ({
 			title: post.data.title,
 			pubDate: post.data.date_pub,
-			description: post.data.description,
+			description: post.body,
 			link: `/blog/${post.slug}`,
 		})),
 	});

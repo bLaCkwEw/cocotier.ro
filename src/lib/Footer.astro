@@ -14,24 +14,21 @@ import { Icon } from "astro-icon/components";
 		</a>.
 	</div>
 	<div class="my-2 flex justify-center gap-2">
-		<a href="/rss.xml" class="transition hover:text-blue-500 active:text-blue-500">
+		<a
+			href="/rss.xml"
+			class="transition hover:text-blue-500 active:text-blue-500"
+			aria-label="RSS Feed"
+		>
 			<Icon name="bi:rss" size={16} />
 		</a>
 		<a
-			href="https://github.com/bLaCkwEw"
+			href="https://github.com/bLaCkwEw/cocotier.ro"
 			target="_blank"
 			rel="noreferer noopener"
 			class="transition hover:text-blue-500 active:text-blue-500"
+			aria-label="Github"
 		>
 			<Icon name="bi:github" size={16} />
-		</a>
-		<a
-			href="https://instagram.com/cocotier.ro"
-			target="_blank"
-			rel="noreferer noopener"
-			class="transition hover:text-blue-500 active:text-blue-500"
-		>
-			<Icon name="bi:instagram" size={16} />
 		</a>
 	</div>
 	<a href="/sitemap-index.xml" class="transition hover:text-blue-500 active:text-blue-500">

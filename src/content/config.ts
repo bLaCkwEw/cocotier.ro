@@ -5,9 +5,12 @@ const blog = defineCollection({
 		title: z.string().max(65, {
 			message: "Title must be less than 65 characters.",
 		}),
-		description: z.string().max(160, {
-			message: "Description must be less than 160 characters.",
-		}),
+		description: z
+			.string()
+			.max(160, {
+				message: "Description must be less than 160 characters.",
+			})
+			.optional(),
 		date_pub: z
 			.string()
 			.or(z.date())
@@ -21,16 +24,4 @@ const blog = defineCollection({
 	}),
 });
 
-const notes = defineCollection({
-	schema: z.object({
-		date_pub: z
-			.string()
-			.or(z.date())
-			.transform((val) => new Date(val)),
-		content: z.string(),
-		img: z.string().optional(),
-		img_alt: z.string().optional(),
-	}),
-});
-
-export const collections = { blog, notes };
+export const collections = { blog };
