@@ -1,6 +1,6 @@
 ---
 title: How to Enable Dragging Windows with Alt Click in Gnome
-date_pub: 2024.09.10
+date_pub: 2024.08.10
 ---
 
 By default gnome seems to be using Meta+Click to drag windows. I personally dislike this combination.
