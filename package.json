@@ -19,7 +19,7 @@
 		"@divriots/jampack": "^0.24.4",
 		"@iconify-json/bi": "^1.1.23",
 		"@tailwindcss/typography": "^0.5.13",
-		"astro": "^4.12.2",
+		"astro": "^4.14.2",
 		"astro-icon": "^1.1.0",
 		"astro-seo-metadata": "^0.6.0",
 		"rehype-autolink-headings": "^7.1.0",
