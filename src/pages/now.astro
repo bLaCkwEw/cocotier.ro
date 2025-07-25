@@ -1,0 +1,126 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Now">
+	<style>
+		details > summary {
+			cursor: pointer;
+			list-style: none;
+		}
+
+		details > summary::before {
+			content: "▶";
+			margin-right: 0.5rem;
+      transition: transform 100ms ease-in-out;
+			display: inline-block;
+		}
+
+		details[open] > summary::before {
+			transform: rotate(90deg);
+		}
+	</style>
+
+	<h2 class="my-16 text-center text-3xl font-bold">Now</h2>
+	<p class="text-sm text-center -mt-12 text-gray-500 dark:text-gray-400">Last updated: <time datetime="2025-07-25">July 25, 2025</time></p>
+
+	<div class="mt-8">
+		<h3 class="text-2xl font-bold">🎧 Listening</h3>
+		<div class="mt-4 space-y-4">
+			<div>
+				<div class="flex justify-between">
+					<h3 class="text-lg font-bold">DON’T TAP THE GLASS - Tyler, The Creator</h3>
+					<time class="text-sm text-gray-500 dark:text-gray-400" datetime="2025-07-25">July 25, 2025</time>
+				</div>
+				<p class="mt-1">The album is quite nice! It is on the shorter side, and I wish it was a bit longer. Still, all the songs are great, so I just tend to put the whole thing on repeat throughout the day. I especially like how unserious, and silly it gets at times. 8/10.</p>
+			</div>
+			<!-- <details> -->
+			<!-- 	<summary class="font-medium hover:text-blue-500">Older entries</summary> -->
+			<!-- 	<div class="mt-2 space-y-4 border-gray-200 pl-4 dark:border-gray-700"> -->
+			<!-- 		<div> -->
+			<!-- 			<div class="flex justify-between"> -->
+			<!-- 				<h3 class="text-lg font-bold">Lorem Ipsum</h3> -->
+			<!-- 				<time class="text-sm text-gray-500 dark:text-gray-400" datetime="2025-01-01">Jan 1, 2025</time> -->
+			<!-- 			</div> -->
+			<!-- 			<p class="mt-1">Lorem Ipsum</p> -->
+			<!-- 		</div> -->
+			<!--      </div> -->
+			<!-- </details> -->
+		</div>
+	</div>
+
+	<div class="mt-8">
+		<h3 class="text-2xl font-bold">📺 Watching</h3>
+		<div class="mt-4 space-y-4">
+			<div>
+				<div class="flex justify-between">
+					<h3 class="text-lg font-bold">Hellsing (2001-2002)</h3>
+					<time class="text-sm text-gray-500 dark:text-gray-400" datetime="2025-07-25">July 25, 2025</time>
+				</div>
+				<p class="mt-1">Watched it before, but I wanted to watch it again. I really like the idea behind this series. I really enjoy the characters. It's just that it ended abruptly and left a lot of stuff unresolved. I saw there are some other, more recent editions of the anime, so hopefully the newer ones deal with the unresolved stuff. For now 7/10.</p>
+			</div>
+			<!-- <details> -->
+			<!--      <summary class="font-medium hover:text-blue-500">Older entries</summary> -->
+			<!--      				<div class="mt-2 space-y-4 border-gray-200 pl-4 dark:border-gray-700"> -->
+			<!-- 		<div> -->
+			<!-- 			<div class="flex justify-between"> -->
+			<!-- 				<h3 class="text-lg font-bold">Lorem Ipsum</h3> -->
+			<!-- 				<time class="text-sm text-gray-500 dark:text-gray-400" datetime="2025-01-01">Jan 1, 2025</time> -->
+			<!-- 			</div> -->
+			<!-- 			<p class="mt-1">Lorem Ipsum</p> -->
+			<!-- 		</div> -->
+			<!--      </div> -->
+			<!-- </details> -->
+		</div>
+	</div>
+
+	<div class="mt-8">
+		<h3 class="text-2xl font-bold">📚 Reading</h3>
+		<div class="mt-4 space-y-4">
+			<div>
+				<div class="flex justify-between">
+					<h3 class="text-lg font-bold">The Last Question - Isaac Asimov</h3>
+					<time class="text-sm text-gray-500 dark:text-gray-400" datetime="2025-07-25">July 25, 2025</time>
+				</div>
+				<p class="mt-1">Short story, quite nice. Some concepts reminded me of <em>Logic Beach: Part I</em> by Exurb1a. It could be that Asimov's work was used as inspiration. Anyway, pretty good read. 7/10.</p>
+			</div>
+			<!-- <details> -->
+			<!--      <summary class="font-medium hover:text-blue-500">Older entries</summary> -->
+			<!-- 	<div class="mt-2 space-y-4 border-gray-200 pl-4 dark:border-gray-700"> -->
+			<!-- 		<div> -->
+			<!-- 			<div class="flex justify-between"> -->
+			<!-- 				<h3 class="text-lg font-bold">Lorem Ipsum</h3> -->
+			<!-- 				<time class="text-sm text-gray-500 dark:text-gray-400" datetime="2025-01-01">Jan 1, 2025</time> -->
+			<!-- 			</div> -->
+			<!-- 			<p class="mt-1">Lorem Ipsum</p> -->
+			<!-- 		</div> -->
+			<!--      </div> -->
+			<!-- </details> -->
+		</div>
+	</div>
+
+	<div class="mt-8">
+		<h3 class="text-2xl font-bold">🎮 Playing</h3>
+		<div class="mt-4 space-y-4">
+			<div>
+				<div class="flex justify-between">
+					<h3 class="text-lg font-bold">A Hat in Time</h3>
+					<time class="text-sm text-gray-500 dark:text-gray-400" datetime="2025-07-25">July 25, 2025</time>
+				</div>
+				<p class="mt-1">Quite ok 3D platformer game. It's not really my type of game tbh, but I still like to hop on it from time to time and complete a level or two. I'd give it around a 7/10.</p>
+			</div>
+			<!-- <details> -->
+			<!--      <summary class="font-medium hover:text-blue-500">Older entries</summary> -->
+			<!-- 	<div class="mt-2 space-y-4 border-gray-200 pl-4 dark:border-gray-700"> -->
+			<!-- 		<div> -->
+			<!-- 			<div class="flex justify-between"> -->
+			<!-- 				<h3 class="text-lg font-bold">Lorem Ipsum</h3> -->
+			<!-- 				<time class="text-sm text-gray-500 dark:text-gray-400" datetime="2025-01-01">Jan 1, 2025</time> -->
+			<!-- 			</div> -->
+			<!-- 			<p class="mt-1">Lorem Ipsum</p> -->
+			<!-- 		</div> -->
+			<!--      </div> -->
+			<!-- </details> -->
+		</div>
+	</div>
+</BaseLayout>

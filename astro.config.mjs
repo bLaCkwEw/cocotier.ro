@@ -21,6 +21,10 @@ export default defineConfig({
   prefetch: {
     prefetchAll: true,
   },
+  image: {
+    layout: "constrained",
+    responsiveStyles: true,
+  },
   integrations: [tailwind(), sitemap(), icon()],
   markdown: {
     remarkPlugins: [remarkCapitalize],
