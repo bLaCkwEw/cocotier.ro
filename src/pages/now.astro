@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+import { Icon } from "astro-icon/components";
 ---
 
 <BaseLayout title="Now" description = "Figure out what I'm currently doing!">
@@ -25,7 +26,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 	<p class="text-sm text-center -mt-12 text-gray-500 dark:text-gray-400">Last updated: <time datetime="2025-07-25">July 25, 2025</time></p>
 
 	<div class="mt-8">
-		<h3 class="text-2xl font-bold">🎧 Listening</h3>
+		<h3 class="text-2xl font-bold flex gap-1"><Icon name="tabler:headphones-filled" size={32} class="inline-block" /> Listening</h3>
 		<div class="mt-4 space-y-4">
 			<div>
 				<div class="flex justify-between">
@@ -39,7 +40,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 			<!-- 	<div class="mt-2 space-y-4 border-gray-200 pl-4 dark:border-gray-700"> -->
 			<!-- 		<div> -->
 			<!-- 			<div class="flex justify-between"> -->
-			<!-- 				<h3 class="text-lg font-bold">Lorem Ipsum</h3> -->
+			<!-- 				<h3 class="text-lg font-bold" aria-label="Lorem Ipsum">Lorem Ipsum</h3> -->
 			<!-- 				<time class="text-sm text-gray-500 dark:text-gray-400" datetime="2025-01-01">Jan 1, 2025</time> -->
 			<!-- 			</div> -->
 			<!-- 			<p class="mt-1">Lorem Ipsum</p> -->
@@ -50,7 +51,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 	</div>
 
 	<div class="mt-8">
-		<h3 class="text-2xl font-bold">📺 Watching</h3>
+    <h3 class="text-2xl font-bold flex gap-1"><Icon name="tabler:device-tv-old" size={32} class="inline-block" /> Watching</h3>
 		<div class="mt-4 space-y-4">
 			<div>
 				<div class="flex justify-between">
@@ -64,7 +65,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 			<!--      				<div class="mt-2 space-y-4 border-gray-200 pl-4 dark:border-gray-700"> -->
 			<!-- 		<div> -->
 			<!-- 			<div class="flex justify-between"> -->
-			<!-- 				<h3 class="text-lg font-bold">Lorem Ipsum</h3> -->
+			<!-- 				<h3 class="text-lg font-bold" aria-label="Lorem Ipsum">Lorem Ipsum</h3> -->
 			<!-- 				<time class="text-sm text-gray-500 dark:text-gray-400" datetime="2025-01-01">Jan 1, 2025</time> -->
 			<!-- 			</div> -->
 			<!-- 			<p class="mt-1">Lorem Ipsum</p> -->
@@ -75,7 +76,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 	</div>
 
 	<div class="mt-8">
-		<h3 class="text-2xl font-bold">📚 Reading</h3>
+		<h3 class="text-2xl font-bold flex gap-1"><Icon name="tabler:book-filled" size={32} class="inline-block" /> Reading</h3>
 		<div class="mt-4 space-y-4">
 			<div>
 				<div class="flex justify-between">
@@ -89,7 +90,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 			<!-- 	<div class="mt-2 space-y-4 border-gray-200 pl-4 dark:border-gray-700"> -->
 			<!-- 		<div> -->
 			<!-- 			<div class="flex justify-between"> -->
-			<!-- 				<h3 class="text-lg font-bold">Lorem Ipsum</h3> -->
+			<!-- 				<h3 class="text-lg font-bold" aria-label="Lorem Ipsum">Lorem Ipsum</h3> -->
 			<!-- 				<time class="text-sm text-gray-500 dark:text-gray-400" datetime="2025-01-01">Jan 1, 2025</time> -->
 			<!-- 			</div> -->
 			<!-- 			<p class="mt-1">Lorem Ipsum</p> -->
@@ -100,11 +101,11 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 	</div>
 
 	<div class="mt-8">
-		<h3 class="text-2xl font-bold">🎮 Playing</h3>
+		<h3 class="text-2xl font-bold flex gap-1"><Icon name="tabler:device-gamepad-3-filled" size={32} class="inline-block" /> Playing</h3>
 		<div class="mt-4 space-y-4">
 			<div>
 				<div class="flex justify-between">
-					<h3 class="text-lg font-bold">A Hat in Time</h3>
+					<h3 class="text-lg font-bold" aria-label="Lorem Ipsum">A Hat in Time</h3>
 					<time class="text-sm text-gray-500 dark:text-gray-400" datetime="2025-07-25">July 25, 2025</time>
 				</div>
 				<p class="mt-1">Quite ok 3D platformer game. It's not really my type of game tbh, but I still like to hop on it from time to time and complete a level or two. I'd give it around a 7/10.</p>
@@ -114,7 +115,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 			<!-- 	<div class="mt-2 space-y-4 border-gray-200 pl-4 dark:border-gray-700"> -->
 			<!-- 		<div> -->
 			<!-- 			<div class="flex justify-between"> -->
-			<!-- 				<h3 class="text-lg font-bold">Lorem Ipsum</h3> -->
+			<!-- 				<h3 class="text-lg font-bold" aria-label="Lorem Ipsum">Lorem Ipsum</h3> -->
 			<!-- 				<time class="text-sm text-gray-500 dark:text-gray-400" datetime="2025-01-01">Jan 1, 2025</time> -->
 			<!-- 			</div> -->
 			<!-- 			<p class="mt-1">Lorem Ipsum</p> -->

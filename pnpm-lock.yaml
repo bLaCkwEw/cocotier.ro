@@ -23,9 +23,9 @@ importers:
       '@divriots/jampack':
         specifier: ^0.26.0
         version: 0.26.0(@swc/helpers@0.5.17)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@iconify-json/bi':
-        specifier: ^1.1.24
-        version: 1.1.24
+      '@iconify-json/tabler':
+        specifier: ^1.2.20
+        version: 1.2.20
       '@tailwindcss/typography':
         specifier: ^0.5.15
         version: 0.5.15(tailwindcss@3.4.10)
@@ -454,8 +454,8 @@ packages:
     resolution: {integrity: sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==}
     engines: {node: '>=14'}
 
-  '@iconify-json/bi@1.1.24':
-    resolution: {integrity: sha512-K8U7s6Hm0Y06q9z41AGLLe+zuwZ7t8LNLG0EUkzZMvUMoZwZosmzFWlp2ajit1MGX+ealu4IKkMioKgjVNQ5ZQ==}
+  '@iconify-json/tabler@1.2.20':
+    resolution: {integrity: sha512-xnM7QO42USWGFM9ahH94uXhRxDOrN6nTNZ+glNHNjeyj6SB2YDeENr9AqrI1hWDacMK1FnjeFc4TI1oyF40Gcw==}
 
   '@iconify/tools@4.0.5':
     resolution: {integrity: sha512-l8KoA1lxlN/FFjlMd3vjfD7BtcX/QnFWtlBapILMlJSBgM5zhDYak/ldw/LkKG3258q/0YmXa48sO/QpxX7ptg==}
@@ -3616,7 +3616,7 @@ snapshots:
 
   '@fastify/busboy@2.1.1': {}
 
-  '@iconify-json/bi@1.1.24':
+  '@iconify-json/tabler@1.2.20':
     dependencies:
       '@iconify/types': 2.0.0
 

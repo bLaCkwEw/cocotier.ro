@@ -17,7 +17,7 @@
 		"@astrojs/tailwind": "^6.0.2",
 		"@astrojs/vercel": "^8.2.3",
 		"@divriots/jampack": "^0.26.0",
-		"@iconify-json/bi": "^1.1.24",
+		"@iconify-json/tabler": "^1.2.20",
 		"@tailwindcss/typography": "^0.5.15",
 		"astro": "^5.12.3",
 		"astro-icon": "^1.1.1",
