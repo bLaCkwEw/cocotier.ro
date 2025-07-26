@@ -3,7 +3,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import { Icon } from "astro-icon/components";
 ---
 
-<BaseLayout title="Now" description = "Figure out what I'm currently doing!">
+<BaseLayout title="Now" description="Figure out what I'm currently doing!">
 	<style>
 		details > summary {
 			cursor: pointer;
@@ -13,7 +13,7 @@ import { Icon } from "astro-icon/components";
 		details > summary::before {
 			content: "▶";
 			margin-right: 0.5rem;
-      transition: transform 100ms ease-in-out;
+			transition: transform 100ms ease-in-out;
 			display: inline-block;
 		}
 
@@ -23,17 +23,27 @@ import { Icon } from "astro-icon/components";
 	</style>
 
 	<h2 class="my-16 text-center text-3xl font-bold">Now</h2>
-	<p class="text-sm text-center -mt-12 text-gray-500 dark:text-gray-400">Last updated: <time datetime="2025-07-25">July 25, 2025</time></p>
+	<p class="-mt-12 text-center text-sm text-gray-500 dark:text-gray-400">
+		Last updated: <time datetime="2025-07-25">July 25, 2025</time>
+	</p>
 
 	<div class="mt-8">
-		<h3 class="text-2xl font-bold flex gap-1"><Icon name="tabler:headphones-filled" size={32} class="inline-block" /> Listening</h3>
+		<h3 class="flex gap-1 text-2xl font-bold">
+			<Icon name="tabler:headphones-filled" size={32} class="inline-block" /> Listening
+		</h3>
 		<div class="mt-4 space-y-4">
 			<div>
 				<div class="flex justify-between">
 					<h3 class="text-lg font-bold">DON’T TAP THE GLASS - Tyler, The Creator</h3>
-					<time class="text-sm text-gray-500 dark:text-gray-400" datetime="2025-07-25">July 25, 2025</time>
+					<time class="text-sm text-gray-500 dark:text-gray-400" datetime="2025-07-25"
+						>July 25, 2025</time
+					>
 				</div>
-				<p class="mt-1">The album is quite nice! It is on the shorter side, and I wish it was a bit longer. Still, all the songs are great, so I just tend to put the whole thing on repeat throughout the day. I especially like how unserious, and silly it gets at times. 8/10.</p>
+				<p class="mt-1">
+					The album is quite nice! It is on the shorter side, and I wish it was a bit longer. Still,
+					all the songs are great, so I just tend to put the whole thing on repeat throughout the
+					day. I especially like how unserious, and silly it gets at times. 8/10.
+				</p>
 			</div>
 			<!-- <details> -->
 			<!-- 	<summary class="font-medium hover:text-blue-500">Older entries</summary> -->
@@ -51,14 +61,23 @@ import { Icon } from "astro-icon/components";
 	</div>
 
 	<div class="mt-8">
-    <h3 class="text-2xl font-bold flex gap-1"><Icon name="tabler:device-tv-old" size={32} class="inline-block" /> Watching</h3>
+		<h3 class="flex gap-1 text-2xl font-bold">
+			<Icon name="tabler:device-tv-old" size={32} class="inline-block" /> Watching
+		</h3>
 		<div class="mt-4 space-y-4">
 			<div>
 				<div class="flex justify-between">
 					<h3 class="text-lg font-bold">Hellsing (2001-2002)</h3>
-					<time class="text-sm text-gray-500 dark:text-gray-400" datetime="2025-07-25">July 25, 2025</time>
+					<time class="text-sm text-gray-500 dark:text-gray-400" datetime="2025-07-25"
+						>July 25, 2025</time
+					>
 				</div>
-				<p class="mt-1">Watched it before, but I wanted to watch it again. I really like the idea behind this series. I really enjoy the characters. It's just that it ended abruptly and left a lot of stuff unresolved. I saw there are some other, more recent editions of the anime, so hopefully the newer ones deal with the unresolved stuff. For now 7/10.</p>
+				<p class="mt-1">
+					Watched it before, but I wanted to watch it again. I really like the idea behind this
+					series. I really enjoy the characters. It's just that it ended abruptly and left a lot of
+					stuff unresolved. I saw there are some other, more recent editions of the anime, so
+					hopefully the newer ones deal with the unresolved stuff. For now 7/10.
+				</p>
 			</div>
 			<!-- <details> -->
 			<!--      <summary class="font-medium hover:text-blue-500">Older entries</summary> -->
@@ -76,14 +95,21 @@ import { Icon } from "astro-icon/components";
 	</div>
 
 	<div class="mt-8">
-		<h3 class="text-2xl font-bold flex gap-1"><Icon name="tabler:book-filled" size={32} class="inline-block" /> Reading</h3>
+		<h3 class="flex gap-1 text-2xl font-bold">
+			<Icon name="tabler:book-filled" size={32} class="inline-block" /> Reading
+		</h3>
 		<div class="mt-4 space-y-4">
 			<div>
 				<div class="flex justify-between">
 					<h3 class="text-lg font-bold">The Last Question - Isaac Asimov</h3>
-					<time class="text-sm text-gray-500 dark:text-gray-400" datetime="2025-07-25">July 25, 2025</time>
+					<time class="text-sm text-gray-500 dark:text-gray-400" datetime="2025-07-25"
+						>July 25, 2025</time
+					>
 				</div>
-				<p class="mt-1">Short story, quite nice. Some concepts reminded me of <em>Logic Beach: Part I</em> by Exurb1a. It could be that Asimov's work was used as inspiration. Anyway, pretty good read. 7/10.</p>
+				<p class="mt-1">
+					Short story, quite nice. Some concepts reminded me of <em>Logic Beach: Part I</em> by Exurb1a.
+					It could be that Asimov's work was used as inspiration. Anyway, pretty good read. 7/10.
+				</p>
 			</div>
 			<!-- <details> -->
 			<!--      <summary class="font-medium hover:text-blue-500">Older entries</summary> -->
@@ -101,14 +127,21 @@ import { Icon } from "astro-icon/components";
 	</div>
 
 	<div class="mt-8">
-		<h3 class="text-2xl font-bold flex gap-1"><Icon name="tabler:device-gamepad-3-filled" size={32} class="inline-block" /> Playing</h3>
+		<h3 class="flex gap-1 text-2xl font-bold">
+			<Icon name="tabler:device-gamepad-3-filled" size={32} class="inline-block" /> Playing
+		</h3>
 		<div class="mt-4 space-y-4">
 			<div>
 				<div class="flex justify-between">
 					<h3 class="text-lg font-bold" aria-label="Lorem Ipsum">A Hat in Time</h3>
-					<time class="text-sm text-gray-500 dark:text-gray-400" datetime="2025-07-25">July 25, 2025</time>
+					<time class="text-sm text-gray-500 dark:text-gray-400" datetime="2025-07-25"
+						>July 25, 2025</time
+					>
 				</div>
-				<p class="mt-1">Quite ok 3D platformer game. It's not really my type of game tbh, but I still like to hop on it from time to time and complete a level or two. I'd give it around a 7/10.</p>
+				<p class="mt-1">
+					Quite ok 3D platformer game. It's not really my type of game tbh, but I still like to hop
+					on it from time to time and complete a level or two. I'd give it around a 7/10.
+				</p>
 			</div>
 			<!-- <details> -->
 			<!--      <summary class="font-medium hover:text-blue-500">Older entries</summary> -->

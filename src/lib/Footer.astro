@@ -1,14 +1,14 @@
 ---
 import { Icon } from "astro-icon/components";
-const lastUpdated = new Date()
+const lastUpdated = new Date();
 ---
 
 <footer class="mb-4 mt-8 p-2 text-center text-xs">
 	<div>
-    Made with 
-    <Icon name="tabler:heart-filled" size={16} class="inline-block" />
+		Made with
+		<Icon name="tabler:heart-filled" size={16} class="inline-block" />
 
-      and <a
+		and <a
 			href="https://astro.build"
 			target="_blank"
 			rel="noreferer noopener"
@@ -16,16 +16,16 @@ const lastUpdated = new Date()
 		>
 			Astro
 		</a>
-  </div>
-  <time datetime={lastUpdated} class="block">
-    Website last updated: {
-    lastUpdated.toLocaleString("en-us", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-    })
-    }
-  </time>
+	</div>
+	<time datetime={lastUpdated} class="block">
+		Website last updated: {
+			lastUpdated.toLocaleString("en-us", {
+				day: "numeric",
+				month: "long",
+				year: "numeric",
+			})
+		}
+	</time>
 
 	<div class="my-2 flex justify-center gap-2">
 		<a
@@ -35,7 +35,7 @@ const lastUpdated = new Date()
 		>
 			<Icon name="tabler:file-rss-filled" size={24} />
 		</a>
-     <a
+		<a
 			href="/sitemap-index.xml"
 			class="transition hover:text-blue-500 active:text-blue-500"
 			aria-label="Sitemap"
@@ -51,6 +51,6 @@ const lastUpdated = new Date()
 			aria-label="Github"
 		>
 			<Icon name="tabler:brand-github-filled" size={24} />
-    </a>
-  </div>
-  </footer>
+		</a>
+	</div>
+</footer>

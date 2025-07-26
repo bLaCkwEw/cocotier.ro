@@ -3,9 +3,10 @@ title: How to Add Window Buttons Back in Gnome
 date_pub: 2024.08.17
 ---
 
-I  recently installed NixOS on a laptop and discovered that by default, Gnome now ships without the minimize and maximize window buttons. I was used to them so I looked for a way of getting them back.
+I recently installed NixOS on a laptop and discovered that by default, Gnome now ships without the minimize and maximize window buttons. I was used to them so I looked for a way of getting them back.
 
 To add them back you can simply run the following command:
+
 ```sh
 gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
 ```
