@@ -1,0 +1,11 @@
+on: [push]
+...
+      steps:
+        - uses: actions/checkout@v3
+          with:
+            fetch-depth: 0
+        - uses: yesolutions/mirror-action@0.7.0
+          with:
+            REMOTE: "https://codeberg.org/blackwew/cocotier.ro.git"
+            GIT_USERNAME: blackwew
+            GIT_PASSWORD: ${{ secrets.CODEBERG_TOKEN }}
