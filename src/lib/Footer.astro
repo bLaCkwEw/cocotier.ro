@@ -1,6 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
-const lastUpdated = new Date();
+const lastDeployed = new Date();
 ---
 
 <footer class="mb-4 mt-8 p-2 text-center text-xs">
@@ -17,9 +17,9 @@ const lastUpdated = new Date();
 			Astro
 		</a>
 	</div>
-	<time datetime={lastUpdated} class="block">
-		Website last updated: {
-			lastUpdated.toLocaleString("en-us", {
+	<time datetime={lastDeployed} class="block">
+		Website last deployed: {
+			lastDeployed.toLocaleString("en-us", {
 				day: "numeric",
 				month: "long",
 				year: "numeric",
