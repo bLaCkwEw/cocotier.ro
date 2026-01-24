@@ -3,7 +3,7 @@ const { post } = Astro.props;
 ---
 
 <div class="mt-16 opacity-70">
-	<time datetime={post.data.date_pub.getTime()} class="block">
+	<time datetime={new Date(post.data.date_pub).getTime()} class="block">
 		Published on {
 			post.data.date_pub.toLocaleString("en-us", {
 				day: "numeric",
@@ -15,7 +15,7 @@ const { post } = Astro.props;
 
 	{
 		post.data.date_updated ? (
-			<time datetime={post.data.date_updated.getTime()} class="block">
+			<time datetime={new Date(post.data.date_updated).getTime()} class="block">
 				Updated on
 				{post.data.date_updated.toLocaleString("en-us", {
 					day: "numeric",

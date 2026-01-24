@@ -1,5 +1,5 @@
 ---
-const { title, description, date_pub } = Astro.props;
+const { title, date_pub } = Astro.props;
 ---
 
 <article class="my-2">
@@ -7,7 +7,7 @@ const { title, description, date_pub } = Astro.props;
 		<h3 class="mb-2 mt-0 overflow-clip overflow-ellipsis text-2xl text-zinc-900 dark:text-stone-50">
 			{title}
 		</h3>
-		<time class="text-xs text-zinc-800 dark:text-stone-200" datetime={date_pub.toISOString()}
+		<time class="text-xs text-zinc-800 dark:text-stone-200" datetime={new Date(date_pub).toISOString()}
 			>{
 				new Date(date_pub).toLocaleDateString("en-US", {
 					year: "numeric",
