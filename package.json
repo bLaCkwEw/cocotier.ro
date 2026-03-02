@@ -21,7 +21,7 @@
 		"@divriots/jampack": "^0.26.0",
 		"@iconify-json/tabler": "^1.2.20",
 		"@tailwindcss/typography": "^0.5.15",
-		"astro": "^5.16.15",
+		"astro": "^5.18.0",
 		"astro-icon": "^1.1.1",
 		"astro-seo-metadata": "^0.6.0",
 		"markdown-it": "^14.1.0",
