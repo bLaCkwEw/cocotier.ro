@@ -8,7 +8,7 @@ export async function getStaticPaths() {
 	const blog_posts = await getCollection("blog");
 	return blog_posts.map((post) => ({
 		params: {
-			id: post.slug,
+			id: post.id,
 		},
 		props: { post },
 	}));
@@ -16,6 +16,8 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
+
+console.log(post)
 ---
 
 <BaseLayout title={post.data.title} description={post.data.description}>
