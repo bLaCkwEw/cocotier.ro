@@ -5,10 +5,10 @@ import Header from "@lib/Header.astro";
 import Time from "@lib/Time.astro";
 
 export async function getStaticPaths() {
-const blog_posts = await getCollection("blog");
+	const blog_posts = await getCollection("blog");
 	return blog_posts.map((post) => ({
 		params: {
-      id: post.slug,
+			id: post.slug,
 		},
 		props: { post },
 	}));

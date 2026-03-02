@@ -15,44 +15,44 @@ const site = "https://cocotier.ro";
 
 // https://astro.build/config
 export default defineConfig({
-    site: site,
-    output: "static",
-    adapter: cloudflare({
-    imageService: "compile"
-  }),
-    prefetch: {
-        prefetchAll: true,
-    },
-    image: {
-        layout: "constrained",
-        responsiveStyles: true,
-    },
-    integrations: [tailwind(), sitemap(), icon()],
-    markdown: {
-        remarkPlugins: [remarkCapitalize],
-        rehypePlugins: [
-            rehypeFigure,
-            rehypeSlug,
-            [
-                rehypeAutolinkHeadings,
-                {
-                    behavior: "append",
-                    properties: {},
-                    content: {
-                        type: "element",
-                        tagName: "span",
-                        properties: {
-                            className: ["mx-2 text-blue-500"],
-                        },
-                        children: [
-                            {
-                                type: "text",
-                                value: "#",
-                            },
-                        ],
-                    },
-                },
-            ],
-        ],
-    },
+	site: site,
+	output: "static",
+	adapter: cloudflare({
+		imageService: "compile",
+	}),
+	prefetch: {
+		prefetchAll: true,
+	},
+	image: {
+		layout: "constrained",
+		responsiveStyles: true,
+	},
+	integrations: [tailwind(), sitemap(), icon()],
+	markdown: {
+		remarkPlugins: [remarkCapitalize],
+		rehypePlugins: [
+			rehypeFigure,
+			rehypeSlug,
+			[
+				rehypeAutolinkHeadings,
+				{
+					behavior: "append",
+					properties: {},
+					content: {
+						type: "element",
+						tagName: "span",
+						properties: {
+							className: ["mx-2 text-blue-500"],
+						},
+						children: [
+							{
+								type: "text",
+								value: "#",
+							},
+						],
+					},
+				},
+			],
+		],
+	},
 });
