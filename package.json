@@ -10,7 +10,8 @@
 		"wrangler": "wrangler pages dev ./dist",
 		"astro": "astro",
 		"check": "astro check",
-		"format": "prettier --write ."
+		"format": "vp fmt .",
+		"prepare": "vp config"
 	},
 	"dependencies": {
 		"@astrojs/check": "0.9.8",
@@ -33,8 +34,7 @@
 		"typescript": "^5.9.3"
 	},
 	"devDependencies": {
-		"prettier": "^3.3.3",
-		"prettier-plugin-astro": "^0.14.1",
-		"prettier-plugin-tailwindcss": "^0.6.6"
-	}
+		"vite-plus": "catalog:"
+	},
+	"packageManager": "pnpm@10.32.1"
 }
