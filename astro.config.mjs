@@ -9,17 +9,12 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeFigure from "rehype-figure";
 import remarkCapitalize from "remark-capitalize";
 
-import cloudflare from "@astrojs/cloudflare";
-
 const site = "https://cocotier.ro";
 
 // https://astro.build/config
 export default defineConfig({
 	site: site,
 	output: "static",
-	adapter: cloudflare({
-		imageService: "compile",
-	}),
 	prefetch: {
 		prefetchAll: true,
 	},
