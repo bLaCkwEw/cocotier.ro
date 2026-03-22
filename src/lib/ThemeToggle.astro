@@ -3,8 +3,8 @@ import { Icon } from "astro-icon/components";
 ---
 
 <button
-	onclick="toggle_theme()"
-	class="flex transition hover:text-blue-500"
+	id="theme-toggle"
+	class="flex rounded transition hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
 	aria-label="Theme Toggle"
 >
 	<Icon name="tabler:sun-filled" size={24} class="hidden dark:block" />
@@ -12,7 +12,7 @@ import { Icon } from "astro-icon/components";
 </button>
 
 <script is:inline>
-	function toggle_theme() {
+	document.getElementById("theme-toggle")?.addEventListener("click", () => {
 		if (document.documentElement.classList.contains("dark")) {
 			localStorage.theme = "light";
 			document.documentElement.classList.remove("dark");
@@ -20,5 +20,5 @@ import { Icon } from "astro-icon/components";
 			localStorage.theme = "dark";
 			document.documentElement.classList.add("dark");
 		}
-	}
+	});
 </script>

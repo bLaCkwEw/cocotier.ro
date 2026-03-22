@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import Post from "@lib/Post.astro";
+import PostCard from "@lib/PostCard.astro";
 
 async function get_posts() {
 	const blog_posts = await getCollection("blog", ({ data }) => {
@@ -28,17 +28,12 @@ const blog_posts = await get_posts();
 	title="Home"
 	description="Personal website where I write about anything and everything."
 >
-	<main>
+	<main id="main-content">
 		<h2 class="my-16 text-center text-3xl font-bold">Latest Posts</h2>
 		<section>
 			{
 				blog_posts.map((post) => (
-					<a
-						href={`/blog/${post.id}`}
-						class="prose prose-zinc mx-auto mb-4 block border border-zinc-900 bg-stone-50 p-4 shadow shadow-stone-300 transition first-of-type:min-h-60 hover:-translate-x-1 hover:-translate-y-2 hover:shadow-[10px_10px_0px_0px] hover:shadow-black focus:-translate-x-1 focus:-translate-y-2 focus:shadow-[10px_10px_0px_0px] focus:shadow-black dark:border-stone-50 dark:bg-zinc-900 dark:shadow-zinc-700 dark:hover:shadow-stone-300 dark:focus:shadow-stone-300"
-					>
-						<Post title={post.data.title} date_pub={post.data.date_pub} />
-					</a>
+					<PostCard post={post} />
 				))
 			}
 		</section>

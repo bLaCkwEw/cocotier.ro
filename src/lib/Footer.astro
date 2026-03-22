@@ -6,13 +6,13 @@ const lastDeployed = new Date();
 <footer class="mb-4 mt-8 p-2 text-center text-xs">
 	<div>
 		Made with
-		<Icon name="tabler:heart-filled" size={16} class="inline-block" />
+		<Icon name="tabler:heart-filled" size={16} class="inline-block" aria-hidden="true" />
 
 		and <a
 			href="https://astro.build"
 			target="_blank"
-			rel="noreferer noopener"
-			class="transition hover:text-blue-500 active:text-blue-500"
+			rel="noopener noreferrer"
+			class="rounded-sm transition hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
 		>
 			Astro
 		</a>
@@ -30,14 +30,14 @@ const lastDeployed = new Date();
 	<div class="my-2 flex justify-center gap-2">
 		<a
 			href="/rss.xml"
-			class="transition hover:text-blue-500 active:text-blue-500"
+			class="rounded-sm transition hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
 			aria-label="RSS Feed"
 		>
 			<Icon name="tabler:file-rss-filled" size={24} />
 		</a>
 		<a
 			href="/sitemap-index.xml"
-			class="transition hover:text-blue-500 active:text-blue-500"
+			class="rounded-sm transition hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
 			aria-label="Sitemap"
 		>
 			<Icon name="tabler:sitemap-filled" size={24} />
@@ -46,8 +46,8 @@ const lastDeployed = new Date();
 		<a
 			href="https://github.com/bLaCkwEw/cocotier.ro"
 			target="_blank"
-			rel="noreferer noopener"
-			class="transition hover:text-blue-500 active:text-blue-500"
+			rel="noopener noreferrer"
+			class="rounded-sm transition hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
 			aria-label="Github"
 		>
 			<Icon name="tabler:brand-github-filled" size={24} />

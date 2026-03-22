@@ -5,7 +5,11 @@ module.exports = {
 		hoverOnlyWhenSupported: true,
 	},
 	theme: {
-		extend: {},
+		extend: {
+			colors: {
+				accent: "rgb(59 130 246)",
+			},
+		},
 	},
 	darkMode: "class",
 	plugins: [require("@tailwindcss/typography")],

@@ -1,14 +1,33 @@
 ---
 import ThemeToggle from "@lib/ThemeToggle.astro";
+
+const currentPath = Astro.url.pathname;
+const isHome = currentPath === "/";
+const isNow = currentPath === "/now" || currentPath.startsWith("/now/");
+const isBlog = currentPath === "/blog" || currentPath.startsWith("/blog/");
 ---
 
-<nav class="my-2 flex justify-between border-b-2 border-blue-500 py-2">
-	<a href="/" class="flex transition hover:text-blue-500">
+<nav class="my-2 flex justify-between border-b-2 border-accent py-2">
+	<a
+		href="/"
+		class="flex rounded transition hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+		aria-current={isHome ? "page" : undefined}
+	>
 		<img src="/favicon.png" alt="Favicon" title="Pixel Art Coconut Tree" width="32" height="32" />
 	</a>
 	<div class="flex items-center gap-4">
-		<a href="/now" class="transition hover:text-blue-500">Now</a>
-		<a href="/blog" class="transition hover:text-blue-500">Archive</a>
+		<a
+			href="/now"
+			class="rounded transition hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+			aria-current={isNow ? "page" : undefined}
+			>Now</a
+		>
+		<a
+			href="/blog"
+			class="rounded transition hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+			aria-current={isBlog ? "page" : undefined}
+			>Archive</a
+		>
 		<ThemeToggle />
 	</div>
 </nav>
