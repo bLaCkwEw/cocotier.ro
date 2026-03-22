@@ -1,2 +1,9 @@
-/// <reference path="../.astro/types.d.ts" />
-/// <reference types="astro/client" />
+import "astro/client";
+
+import type { AstroConfig } from "astro";
+
+declare module "astro" {
+	interface AstroConfig {
+		output: "static" | "server" | "hybrid";
+	}
+}

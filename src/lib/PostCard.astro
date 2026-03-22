@@ -1,0 +1,16 @@
+---
+import Post from "@lib/Post.astro";
+import Card from "@lib/design-system/components/Card.astro";
+
+const { post } = Astro.props;
+---
+
+<style>
+	.post-card {
+		will-change: transform;
+	}
+</style>
+
+<Card href={`/blog/${post.id}`} class="post-card">
+	<Post title={post.data.title} date_pub={post.data.date_pub} />
+</Card>

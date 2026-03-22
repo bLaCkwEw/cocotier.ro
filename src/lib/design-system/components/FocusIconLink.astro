@@ -1,0 +1,26 @@
+---
+interface Props {
+	href: string;
+	"aria-label": string;
+	class?: string;
+	target?: "_blank" | "_self" | "_parent" | "_top";
+	rel?: string;
+}
+
+const { href, "aria-label": ariaLabel, class: className = "", target, rel } = Astro.props;
+
+const isExternal = target === "_blank" || rel?.includes("noopener");
+---
+
+<a
+	href={href}
+	class:list={[
+		"rounded-sm transition hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2",
+		className,
+	]}
+	aria-label={ariaLabel}
+	target={target}
+	rel={rel ?? (isExternal ? "noopener noreferrer" : undefined)}
+>
+	<slot />
+</a>

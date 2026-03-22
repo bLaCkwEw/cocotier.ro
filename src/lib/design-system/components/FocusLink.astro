@@ -1,0 +1,28 @@
+---
+interface Props {
+	href: string;
+	class?: string;
+	"aria-current"?: "page" | "step" | "location" | "true" | "false" | undefined;
+	"aria-label"?: string;
+	target?: "_blank" | "_self" | "_parent" | "_top";
+	rel?: string;
+}
+
+const { href, class: className = "", "aria-current": ariaCurrent, "aria-label": ariaLabel, target, rel } = Astro.props;
+
+const isExternal = target === "_blank" || rel?.includes("noopener");
+---
+
+<a
+	href={href}
+	class:list={[
+		"rounded transition hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2",
+		className,
+	]}
+	aria-current={ariaCurrent}
+	aria-label={ariaLabel}
+	target={target}
+	rel={rel ?? (isExternal ? "noopener noreferrer" : undefined)}
+>
+	<slot />
+</a>

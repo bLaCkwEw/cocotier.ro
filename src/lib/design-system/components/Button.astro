@@ -1,0 +1,20 @@
+---
+interface Props {
+	id?: string;
+	class?: string;
+	"aria-label": string;
+}
+
+const { id, class: className = "", "aria-label": ariaLabel } = Astro.props;
+---
+
+<button
+	id={id}
+	class:list={[
+		"flex rounded transition hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2",
+		className,
+	]}
+	aria-label={ariaLabel}
+>
+	<slot />
+</button>

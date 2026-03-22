@@ -1,27 +1,28 @@
 ---
 const { post } = Astro.props;
+
+const formatDate = (date: Date) => {
+	return date.toLocaleDateString("en-US", {
+		day: "numeric",
+		month: "long",
+		year: "numeric",
+	});
+};
+
+const formatDateAttr = (date: Date) => {
+	return date.toLocaleDateString("en-CA");
+};
 ---
 
 <div class="mt-16 opacity-70">
-	<time datetime={new Date(post.data.date_pub).getTime()} class="block">
-		Published on {
-			post.data.date_pub.toLocaleString("en-us", {
-				day: "numeric",
-				month: "long",
-				year: "numeric",
-			})
-		}
+	<time datetime={formatDateAttr(new Date(post.data.date_pub))} class="block">
+		Published on {formatDate(new Date(post.data.date_pub))}
 	</time>
 
 	{
 		post.data.date_updated ? (
-			<time datetime={new Date(post.data.date_updated).getTime()} class="block">
-				Updated on
-				{post.data.date_updated.toLocaleString("en-us", {
-					day: "numeric",
-					month: "long",
-					year: "numeric",
-				})}
+			<time datetime={formatDateAttr(new Date(post.data.date_updated))} class="block">
+				Updated on {formatDate(new Date(post.data.date_updated))}
 			</time>
 		) : null
 	}

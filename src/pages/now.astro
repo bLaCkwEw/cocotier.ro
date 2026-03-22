@@ -22,13 +22,26 @@ import { Icon } from "astro-icon/components";
 		}
 	</style>
 
+	<script is:inline>
+		document.querySelectorAll("details").forEach((details) => {
+			const summary = details.querySelector("summary");
+			if (summary) {
+				summary.setAttribute("aria-expanded", details.hasAttribute("open") ? "true" : "false");
+				details.addEventListener("toggle", () => {
+					summary.setAttribute("aria-expanded", details.hasAttribute("open") ? "true" : "false");
+				});
+			}
+		});
+	</script>
+
+	<main id="main-content">
 	<h2 class="my-16 text-center text-3xl font-bold">Now</h2>
-	<p class="-mt-12 text-center text-sm text-gray-500 dark:text-gray-400">
+	<p class="-mt-12 text-center text-sm text-stone-500 dark:text-stone-400">
 		Last updated: <time datetime="2025-07-25">July 25, 2025</time>
 	</p>
 
 	<span
-		class="prose-a:underline prose-a:transition hover:prose-a:text-blue-500 focus:prose-a:text-blue-500 active:prose-a:text-blue-500 prose-a:hover:prose-headings:text-blue-500"
+		class="prose-a:underline prose-a:transition hover:prose-a:text-accent focus:prose-a:text-accent active:prose-a:text-accent prose-a:hover:prose-headings:text-accent"
 	>
 		<div class="mt-8">
 			<h3 class="flex gap-1 text-2xl font-bold">
@@ -38,7 +51,7 @@ import { Icon } from "astro-icon/components";
 				<div>
 					<div class="flex justify-between">
 						<h3 class="text-lg font-bold">LP1 - FKA twigs</h3>
-						<time class="text-sm text-gray-500 dark:text-gray-400" datetime="2025-08-09"
+						<time class="text-sm text-stone-500 dark:text-stone-400" datetime="2025-08-09"
 							>August 09, 2025</time
 						>
 					</div>
@@ -49,8 +62,10 @@ import { Icon } from "astro-icon/components";
 						is <em>FREAKY</em>!! 9/10.
 					</p>
 				</div>
-				<details>
-					<summary class="font-medium hover:text-blue-500">Older entries</summary>
+				<details id="older-listening">
+					<summary class="font-medium hover:text-accent" aria-controls="older-listening" aria-expanded="false">
+						Older entries
+					</summary>
 					<div class="mt-2 space-y-4 border-gray-200 pl-4 dark:border-gray-700">
 						<div>
 							<div class="flex justify-between">
@@ -60,7 +75,7 @@ import { Icon } from "astro-icon/components";
 								>
 									Alfredo 2 - Freddie Gibbs & The Alchemist
 								</h3>
-								<time class="text-sm text-gray-500 dark:text-gray-400" datetime="2025-08-08"
+								<time class="text-sm text-stone-500 dark:text-stone-400" datetime="2025-08-08"
 									>August 08, 2025</time
 								>
 							</div>
@@ -76,7 +91,7 @@ import { Icon } from "astro-icon/components";
 								<h3 class="text-lg font-bold" aria-label="Late Registration - Kanye West">
 									Late Registration - Kanye West
 								</h3>
-								<time class="text-sm text-gray-500 dark:text-gray-400" datetime="2025-07-28"
+								<time class="text-sm text-stone-500 dark:text-stone-400" datetime="2025-07-28"
 									>July 28, 2025</time
 								>
 							</div>
@@ -95,7 +110,7 @@ import { Icon } from "astro-icon/components";
 								<h3 class="text-lg font-bold" aria-label="Graduation - Kanye West">
 									Graduation - Kanye West
 								</h3>
-								<time class="text-sm text-gray-500 dark:text-gray-400" datetime="2025-07-27"
+								<time class="text-sm text-stone-500 dark:text-stone-400" datetime="2025-07-27"
 									>July 27, 2025</time
 								>
 							</div>
@@ -112,7 +127,7 @@ import { Icon } from "astro-icon/components";
 								<h3 class="text-lg font-bold" aria-label="DON’T TAP THE GLASS - Tyler, The Creator">
 									DON’T TAP THE GLASS - Tyler, The Creator
 								</h3>
-								<time class="text-sm text-gray-500 dark:text-gray-400" datetime="2025-07-25"
+								<time class="text-sm text-stone-500 dark:text-stone-400" datetime="2025-07-25"
 									>July 25, 2025</time
 								>
 							</div>
@@ -136,7 +151,7 @@ import { Icon } from "astro-icon/components";
 				<div>
 					<div class="flex justify-between">
 						<h3 class="text-lg font-bold">Hellsing (2001-2002)</h3>
-						<time class="text-sm text-gray-500 dark:text-gray-400" datetime="2025-07-25"
+						<time class="text-sm text-stone-500 dark:text-stone-400" datetime="2025-07-25"
 							>July 25, 2025</time
 						>
 					</div>
@@ -147,18 +162,6 @@ import { Icon } from "astro-icon/components";
 						hopefully the newer ones deal with the unresolved stuff. For now 7/10.
 					</p>
 				</div>
-				<!-- <details> -->
-				<!--      <summary class="font-medium hover:text-blue-500">Older entries</summary> -->
-				<!--      				<div class="mt-2 space-y-4 border-gray-200 pl-4 dark:border-gray-700"> -->
-				<!-- 		<div> -->
-				<!-- 			<div class="flex justify-between"> -->
-				<!-- 				<h3 class="text-lg font-bold" aria-label="Lorem Ipsum">Lorem Ipsum</h3> -->
-				<!-- 				<time class="text-sm text-gray-500 dark:text-gray-400" datetime="2025-01-01">Jan 1, 2025</time> -->
-				<!-- 			</div> -->
-				<!-- 			<p class="mt-1">Lorem Ipsum</p> -->
-				<!-- 		</div> -->
-				<!--      </div> -->
-				<!-- </details> -->
 			</div>
 		</div>
 
@@ -170,7 +173,7 @@ import { Icon } from "astro-icon/components";
 				<div>
 					<div class="flex justify-between">
 						<h3 class="text-lg font-bold">The Last Question - Isaac Asimov</h3>
-						<time class="text-sm text-gray-500 dark:text-gray-400" datetime="2025-07-25"
+						<time class="text-sm text-stone-500 dark:text-stone-400" datetime="2025-07-25"
 							>July 25, 2025</time
 						>
 					</div>
@@ -179,19 +182,6 @@ import { Icon } from "astro-icon/components";
 						It could be that Asimov's work was used as inspiration. Anyway, pretty good read. 7/10.
 					</p>
 				</div>
-				<!-- <details> -->
-				<!--      <summary class="font-medium hover:text-blue-500">Older entries</summary> -->
-				<!-- 	<div class="mt-2 space-y-4 border-gray-200 pl-4 dark:border-gray-700"> -->
-				<!-- 		<div> -->
-				<!-- 			<div class="flex justify-between"> -->
-				<!-- 				<h3 class="text-lg font-bold" aria-label="Lorem Ipsum">Lorem Ipsum</h3> -->
-				<!-- 				<time class="text-sm text-gray-500 dark:text-gray-400" datetime="2025-01-01">Jan 1, 2025</time> -->
-				<!-- 			</div> -->
-				<!-- 			<p class="mt-1">Lorem Ipsum</p> -->
-				<!-- 		</div> -->
-				<!--      </div> -->
-				<!-- </details> -->
-			</div>
 		</div>
 
 		<div class="mt-8">
@@ -202,7 +192,7 @@ import { Icon } from "astro-icon/components";
 				<div>
 					<div class="flex justify-between">
 						<h3 class="text-lg font-bold" aria-label="Lorem Ipsum">A Hat in Time</h3>
-						<time class="text-sm text-gray-500 dark:text-gray-400" datetime="2025-07-25"
+						<time class="text-sm text-stone-500 dark:text-stone-400" datetime="2025-07-25"
 							>July 25, 2025</time
 						>
 					</div>
@@ -211,19 +201,7 @@ import { Icon } from "astro-icon/components";
 						hop on it from time to time and complete a level or two. I'd give it around a 7/10.
 					</p>
 				</div>
-				<!-- <details> -->
-				<!--      <summary class="font-medium hover:text-blue-500">Older entries</summary> -->
-				<!-- 	<div class="mt-2 space-y-4 border-gray-200 pl-4 dark:border-gray-700"> -->
-				<!-- 		<div> -->
-				<!-- 			<div class="flex justify-between"> -->
-				<!-- 				<h3 class="text-lg font-bold" aria-label="Lorem Ipsum">Lorem Ipsum</h3> -->
-				<!-- 				<time class="text-sm text-gray-500 dark:text-gray-400" datetime="2025-01-01">Jan 1, 2025</time> -->
-				<!-- 			</div> -->
-				<!-- 			<p class="mt-1">Lorem Ipsum</p> -->
-				<!-- 		</div> -->
-				<!--      </div> -->
-				<!-- </details> -->
-			</div>
 		</div>
 	</span>
+	</main>
 </BaseLayout>

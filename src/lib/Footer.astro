@@ -1,21 +1,16 @@
 ---
 import { Icon } from "astro-icon/components";
+import FocusLink from "@lib/design-system/components/FocusLink.astro";
+import FocusIconLink from "@lib/design-system/components/FocusIconLink.astro";
 const lastDeployed = new Date();
 ---
 
 <footer class="mb-4 mt-8 p-2 text-center text-xs">
 	<div>
 		Made with
-		<Icon name="tabler:heart-filled" size={16} class="inline-block" />
+		<Icon name="tabler:heart-filled" size={16} class="inline-block" aria-hidden="true" />
 
-		and <a
-			href="https://astro.build"
-			target="_blank"
-			rel="noreferer noopener"
-			class="transition hover:text-blue-500 active:text-blue-500"
-		>
-			Astro
-		</a>
+		and <FocusLink href="https://astro.build" target="_blank" rel="noopener noreferrer">Astro</FocusLink>
 	</div>
 	<time datetime={lastDeployed} class="block">
 		Website last deployed: {
@@ -28,29 +23,15 @@ const lastDeployed = new Date();
 	</time>
 
 	<div class="my-2 flex justify-center gap-2">
-		<a
-			href="/rss.xml"
-			class="transition hover:text-blue-500 active:text-blue-500"
-			aria-label="RSS Feed"
-		>
+		<FocusIconLink href="/rss.xml" aria-label="RSS Feed">
 			<Icon name="tabler:file-rss-filled" size={24} />
-		</a>
-		<a
-			href="/sitemap-index.xml"
-			class="transition hover:text-blue-500 active:text-blue-500"
-			aria-label="Sitemap"
-		>
+		</FocusIconLink>
+		<FocusIconLink href="/sitemap-index.xml" aria-label="Sitemap">
 			<Icon name="tabler:sitemap-filled" size={24} />
-		</a>
+		</FocusIconLink>
 
-		<a
-			href="https://github.com/bLaCkwEw/cocotier.ro"
-			target="_blank"
-			rel="noreferer noopener"
-			class="transition hover:text-blue-500 active:text-blue-500"
-			aria-label="Github"
-		>
+		<FocusIconLink href="https://github.com/bLaCkwEw/cocotier.ro" target="_blank" rel="noopener noreferrer" aria-label="Github">
 			<Icon name="tabler:brand-github-filled" size={24} />
-		</a>
+		</FocusIconLink>
 	</div>
 </footer>
