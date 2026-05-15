@@ -4,8 +4,8 @@ import FocusLink from "@lib/design-system/components/FocusLink.astro";
 
 const currentPath = Astro.url.pathname;
 const isHome = currentPath === "/";
-const isNow = currentPath === "/now" || currentPath.startsWith("/now/");
-const isBlog = currentPath === "/blog" || currentPath.startsWith("/blog/");
+const isNow = currentPath === "/now/" || currentPath.startsWith("/now/");
+const isBlog = currentPath === "/blog/" || currentPath.startsWith("/blog/");
 ---
 
 <nav class="my-2 flex justify-between border-b-2 border-accent py-2">
@@ -13,8 +13,8 @@ const isBlog = currentPath === "/blog" || currentPath.startsWith("/blog/");
 		<img src="/favicon.png" alt="Favicon" title="Pixel Art Coconut Tree" width="32" height="32" />
 	</FocusLink>
 	<div class="flex items-center gap-4">
-		<FocusLink href="/now" aria-current={isNow ? "page" : undefined}>Now</FocusLink>
-		<FocusLink href="/blog" aria-current={isBlog ? "page" : undefined}>Archive</FocusLink>
+		<FocusLink href="/now/" aria-current={isNow ? "page" : undefined}>Now</FocusLink>
+		<FocusLink href="/blog/" aria-current={isBlog ? "page" : undefined}>Archive</FocusLink>
 		<ThemeToggle />
 	</div>
 </nav>

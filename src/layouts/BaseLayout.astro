@@ -3,9 +3,48 @@ import Nav from "@lib/Nav.astro";
 import Footer from "@lib/Footer.astro";
 import SkipLink from "@lib/design-system/components/SkipLink.astro";
 import AdNote from "@lib/AdNote.astro";
-import { SEOMetadata } from "astro-seo-metadata";
+import { SEO } from "astro-seo";
 
-const { title, description, image } = Astro.props;
+const {
+  title,
+  description,
+  image,
+  type = "website",
+  noindex = false,
+  article,
+} = Astro.props;
+
+const ogRoute = Astro.url.pathname.replace(/^\/|\/$/g, "") || "home";
+const ogImage = image ?? `/open-graph/${ogRoute}.png`;
+
+const openGraph = {
+  basic: {
+    title: title || "cocotier.ro",
+    type: type,
+    image: new URL(ogImage, Astro.url.origin).href,
+    url: Astro.url.toString(),
+  },
+  optional: {
+    siteName: "cocotier.ro",
+    locale: "en_US",
+    ...(description ? { description } : {}),
+  },
+  image: {
+    alt: title || description || "cocotier.ro",
+  },
+  ...(article ? { article } : {}),
+};
+
+const twitterCard = {
+  card: "summary_large_image" as const,
+  image: new URL(ogImage, Astro.url.origin).href,
+  imageAlt: title || description || "cocotier.ro",
+};
+
+const extendMeta = [
+  { name: "author", content: "bLaCkwEw" },
+  { name: "generator", content: Astro.generator },
+];
 ---
 
 <html lang="en" class="scroll-smooth">
@@ -13,15 +52,21 @@ const { title, description, image } = Astro.props;
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-		<SEOMetadata
-			title={title ? title + " - cocotier.ro" : "cocotier.ro"}
+		<SEO
+			title={title}
+			titleTemplate="%s - cocotier.ro"
+			titleDefault="cocotier.ro"
 			description={description}
-			image={image}
-			favicon={"/favicon.png"}
-			author={"bLaCkwEw"}
-			canonicalUrl={Astro.url.toString()}
-			type={"website"}
-			astroGenerator={true}
+			canonical={Astro.url.toString()}
+			noindex={noindex}
+			openGraph={openGraph}
+			twitter={twitterCard}
+			extend={{
+				link: [
+					{ rel: "icon", href: "/favicon.png" },
+				],
+				meta: extendMeta,
+			}}
 		/>
 
 		<link rel="sitemap" href="/sitemap-index.xml" />
