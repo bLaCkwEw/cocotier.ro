@@ -18,7 +18,7 @@ export async function GET(context: { site: any }) {
 			content: sanitizeHtml(parser.render(post.body), {
 				allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
 			}),
-			link: `/blog/${post.slug}`,
+			link: `/blog/${post.id}`,
 		})),
 	});
 }
