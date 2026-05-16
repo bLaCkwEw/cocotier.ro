@@ -1,0 +1,24 @@
+{
+	"$schema": "./node_modules/oxfmt/configuration_schema.json",
+	"printWidth": 80,
+	"tabWidth": 2,
+	"useTabs": true,
+	"semi": true,
+	"singleQuote": false,
+	"trailingComma": "es5",
+	"sortTailwindcss": true,
+	"sortPackageJson": true,
+	"sortImports": true,
+	"ignorePatterns": [
+		"dist/",
+		".astro/",
+		"node_modules/",
+		"npm-debug.log*",
+		"pnpm-debug.log*",
+		"yarn-debug.log*",
+		"yarn-error.log*",
+		".env",
+		".env.production",
+		".DS_Store"
+	]
+}

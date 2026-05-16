@@ -13,7 +13,8 @@ const blogPages = Object.fromEntries(
 const staticPages = {
 	home: {
 		title: "cocotier.ro",
-		description: "Personal website where I write about anything and everything.",
+		description:
+			"Personal website where I write about anything and everything.",
 	},
 	blog: { title: "Blog", description: undefined },
 	now: {

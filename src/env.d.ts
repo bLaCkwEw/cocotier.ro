@@ -1,5 +1,4 @@
 import "astro/client";
-
 import type { AstroConfig } from "astro";
 
 declare module "astro" {

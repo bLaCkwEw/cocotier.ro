@@ -61,7 +61,9 @@ CSS evolved, browser support for CSS evolved. You can now somewhat center the co
 Need more control? You can use `position: absolute;` and `transform: translate()` now. That's kinda useful.
 
 ```html
-<div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);">
+<div
+	style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);"
+>
 	Content
 </div>
 ```
@@ -73,13 +75,17 @@ From this point on, CSS should work fine in all major browsers, so there's no mo
 Flexbox is popular now so you can center divs with that if you'd like:
 
 ```html
-<div style="display: flex; justify-content: center; align-items: center;">Content</div>
+<div style="display: flex; justify-content: center; align-items: center;">
+	Content
+</div>
 ```
 
 Did I say flexbox? Time moves fast in the web dev space, it's actually CSS Grid now. But don't worry, you can do literally the same thing, just replace `flex` with `grid`.
 
 ```html
-<div style="display: grid; justify-content: center; align-items: center;">Content</div>
+<div style="display: grid; justify-content: center; align-items: center;">
+	Content
+</div>
 ```
 
 Ok, fine, you wanna do it properly, I got you.

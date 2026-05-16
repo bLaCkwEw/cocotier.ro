@@ -1,12 +1,12 @@
-import { defineConfig } from "astro/config";
+import sitemap from "@astrojs/sitemap";
 // Astro plugins
 import tailwind from "@astrojs/tailwind";
-import sitemap from "@astrojs/sitemap";
 import icon from "astro-icon";
-// Markdown plugins
-import rehypeSlug from "rehype-slug";
+import { defineConfig } from "astro/config";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeFigure from "rehype-figure";
+// Markdown plugins
+import rehypeSlug from "rehype-slug";
 import remarkCapitalize from "remark-capitalize";
 
 const site = "https://cocotier.ro";

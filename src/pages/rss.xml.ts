@@ -1,14 +1,15 @@
 import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
-import sanitizeHtml from "sanitize-html";
 import MarkdownIt from "markdown-it";
+import sanitizeHtml from "sanitize-html";
 const parser = new MarkdownIt();
 
 export async function GET(context: { site: any }) {
 	const blog = await getCollection("blog");
 	return rss({
 		title: "cocotier.ro",
-		description: "Personal website where I write about anything and everything.",
+		description:
+			"Personal website where I write about anything and everything.",
 		site: context.site,
 		items: blog.map((post) => ({
 			title: post.data.title,
