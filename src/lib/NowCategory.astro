@@ -1,0 +1,35 @@
+---
+import { Icon } from "astro-icon/components";
+import NowEntry from "./NowEntry.astro";
+
+const { title, icon, entries } = Astro.props;
+const id = title.toLowerCase();
+---
+
+<div class="mt-8">
+  <h2 class="flex gap-1 text-2xl font-bold" id={title.toLowerCase()}>
+		<Icon name={icon} size={32} class="inline-block" />
+    {title}
+	</h2>
+	<div class="mt-4 space-y-4">
+		{entries.length > 0 && <NowEntry entry={entries[0]} />}
+		{
+			entries.length > 1 && (
+				<details id={`older-${id}`}>
+					<summary
+						class="font-medium hover:text-accent"
+						aria-controls={`older-${id}`}
+						aria-expanded="false"
+					>
+						Older entries
+					</summary>
+					<div class="mt-2 space-y-4 border-gray-200 pl-4 dark:border-gray-700">
+						{entries.slice(1).map((entry) => (
+							<NowEntry entry={entry} />
+						))}
+					</div>
+				</details>
+			)
+		}
+	</div>
+</div>

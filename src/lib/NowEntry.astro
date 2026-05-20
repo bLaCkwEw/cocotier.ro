@@ -1,0 +1,30 @@
+---
+import { render } from "astro:content";
+
+const { entry } = Astro.props;
+
+const { Content } = await render(entry);
+const { title, date, rating } = entry.data;
+---
+
+<div>
+	<div class="flex justify-between">
+    <h3 class="text-lg font-bold" aria-label={title}>
+			{title}
+		</h3>
+		<time
+			class="text-sm text-stone-500 dark:text-stone-400"
+			datetime={date.toISOString().split("T")[0]}
+		>
+			{date.toLocaleDateString("en-US", {
+				month: "long",
+				day: "2-digit",
+				year: "numeric",
+			})}
+		</time>
+	</div>
+	<div class="mt-1">
+		<Content />
+		{rating && <p class="mt-1">Rating: {rating}</p>}
+	</div>
+</div>
