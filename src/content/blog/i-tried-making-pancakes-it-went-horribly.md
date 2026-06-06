@@ -1,7 +1,6 @@
 ---
 title: I tried making pancakes. It went horribly
 date_pub: 2026.05.11
-draft: false
 ---
 
 A couple of days ago I tried making some pancakes. Everything that could go wrong, did go wrong.
