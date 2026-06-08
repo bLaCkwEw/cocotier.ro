@@ -1,6 +1,6 @@
 ---
 title: Cassette Beasts
-date: 2026.06.06
+date: 2026-06-06
 category: playing
 rating: "8/10"
 ---

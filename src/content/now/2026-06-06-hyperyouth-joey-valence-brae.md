@@ -1,6 +1,6 @@
 ---
 title: HYPERYOUTH - Joey Valence & Brae
-date: 2026.06.06
+date: 2026-06-06
 category: listening
 rating: "8/10"
 ---
