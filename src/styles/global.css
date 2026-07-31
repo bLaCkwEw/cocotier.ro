@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+	--color-accent: #3b82f6;
+}
+
+/*
+ * Workarounds for @tailwindcss/typography v0.5.20 with Tailwind v4:
+ * stacked variants like prose-code:prose-pre: and prose-a:prose-headings:
+ * generate reversed selectors (e.g. "code pre" instead of "pre code"), so
+ * these rules replicate the correct v3 selectors.
+ */
+.prose :where(pre) :where(code) {
+	background-color: inherit;
+	padding: 0;
+}
+
+.prose :where(h1, h2, h3, h4, h5, h6, th) :where(a) {
+	color: transparent;
+	text-decoration-line: none;
+}
+
+@media (hover: hover) {
+	.prose :where(h1, h2, h3, h4, h5, h6, th) :where(a):hover {
+		color: var(--color-accent);
+		text-decoration-line: underline;
+	}
+}

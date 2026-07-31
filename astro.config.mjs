@@ -1,13 +1,16 @@
+import { satteri } from "@astrojs/markdown-satteri";
 import sitemap from "@astrojs/sitemap";
+import tailwindcss from "@tailwindcss/vite";
 // Astro plugins
-import tailwind from "@astrojs/tailwind";
 import icon from "astro-icon";
 import { defineConfig } from "astro/config";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import rehypeFigure from "rehype-figure";
-// Markdown plugins
-import rehypeSlug from "rehype-slug";
-import remarkCapitalize from "remark-capitalize";
+
+// Sätteri plugins (ported from remark/rehype)
+import {
+	autolinkHeadings,
+	capitalizeHeadings,
+	figure,
+} from "./src/lib/markdown/satteri-plugins.ts";
 
 const site = "https://cocotier.ro";
 
@@ -22,32 +25,14 @@ export default defineConfig({
 		layout: "constrained",
 		responsiveStyles: true,
 	},
-	integrations: [tailwind(), sitemap(), icon()],
+	integrations: [sitemap(), icon()],
+	vite: {
+		plugins: [tailwindcss()],
+	},
 	markdown: {
-		remarkPlugins: [remarkCapitalize],
-		rehypePlugins: [
-			rehypeFigure,
-			rehypeSlug,
-			[
-				rehypeAutolinkHeadings,
-				{
-					behavior: "append",
-					properties: {},
-					content: {
-						type: "element",
-						tagName: "span",
-						properties: {
-							className: ["mx-2 text-blue-500"],
-						},
-						children: [
-							{
-								type: "text",
-								value: "#",
-							},
-						],
-					},
-				},
-			],
-		],
+		processor: satteri({
+			mdastPlugins: [capitalizeHeadings],
+			hastPlugins: [figure, autolinkHeadings],
+		}),
 	},
 });

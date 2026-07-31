@@ -24,7 +24,6 @@ const staticPages = {
 };
 
 export const { getStaticPaths, GET } = await OGImageRoute({
-	param: "route",
 	pages: { ...staticPages, ...blogPages },
 	getImageOptions: (_path, page) => ({
 		title: page.title,
