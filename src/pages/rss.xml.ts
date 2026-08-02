@@ -1,11 +1,14 @@
 import rss from "@astrojs/rss";
-import { getCollection } from "astro:content";
-import MarkdownIt from "markdown-it";
-import sanitizeHtml from "sanitize-html";
-const parser = new MarkdownIt();
+import { markdownToHtml } from "satteri";
+import { getPublishedPosts } from "@lib/posts";
+import {
+	autolinkHeadings,
+	capitalizeHeadings,
+	figure,
+} from "@lib/markdown/satteri-plugins";
 
 export async function GET(context: { site: any }) {
-	const blog = await getCollection("blog");
+	const blog = await getPublishedPosts();
 	return rss({
 		title: "cocotier.ro",
 		description:
@@ -15,9 +18,10 @@ export async function GET(context: { site: any }) {
 			title: post.data.title,
 			pubDate: post.data.date_pub,
 			description: post.data.description,
-			content: sanitizeHtml(parser.render(post.body), {
-				allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"]),
-			}),
+			content: markdownToHtml(post.body ?? "", {
+				mdastPlugins: [capitalizeHeadings],
+				hastPlugins: [figure, autolinkHeadings],
+			}).html,
 			link: `/blog/${post.id}`,
 		})),
 	});

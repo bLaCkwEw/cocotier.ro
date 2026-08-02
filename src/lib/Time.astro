@@ -15,14 +15,14 @@ const formatDateAttr = (date: Date) => {
 ---
 
 <div class="mt-16 opacity-70">
-	<time datetime={formatDateAttr(new Date(post.data.date_pub))} class="block">
-		Published on {formatDate(new Date(post.data.date_pub))}
+	<time datetime={formatDateAttr(post.data.date_pub)} class="block">
+		Published on {formatDate(post.data.date_pub)}
 	</time>
 
 	{
 		post.data.date_updated ? (
-			<time datetime={formatDateAttr(new Date(post.data.date_updated))} class="block">
-				Updated on {formatDate(new Date(post.data.date_updated))}
+			<time datetime={formatDateAttr(post.data.date_updated)} class="block">
+				Updated on {formatDate(post.data.date_updated)}
 			</time>
 		) : null
 	}

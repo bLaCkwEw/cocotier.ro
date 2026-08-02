@@ -38,6 +38,10 @@ const playing = entries.filter((e) => e.data.category === "playing");
 			list-style: none;
 		}
 
+		details > summary::-webkit-details-marker {
+			display: none;
+		}
+
 		details > summary::before {
 			content: "▶";
 			margin-right: 0.5rem;
@@ -77,13 +81,13 @@ const playing = entries.filter((e) => e.data.category === "playing");
 			</time>
 		</p>
 
-		<span
+		<div
 			class="prose-a:underline prose-a:transition prose-a:hover:text-accent prose-a:focus-visible:text-accent prose-a:active:text-accent"
 		>
 			<NowCategory title="Listening" icon="tabler:headphones-filled" entries={listening} />
 			<NowCategory title="Watching" icon="tabler:device-tv-old" entries={watching} />
 			<NowCategory title="Reading" icon="tabler:book-filled" entries={reading} />
 			<NowCategory title="Playing" icon="tabler:device-gamepad-3-filled" entries={playing} />
-		</span>
+		</div>
 	</main>
 </BaseLayout>

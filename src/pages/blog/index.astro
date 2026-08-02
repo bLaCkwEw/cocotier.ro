@@ -1,20 +1,9 @@
 ---
-import { getCollection } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import PostCard from "@lib/PostCard.astro";
+import { getPublishedPosts } from "@lib/posts";
 
-async function get_posts() {
-	const blog_posts = await getCollection("blog", ({ data }) => {
-		return data.draft !== true;
-	});
-
-	blog_posts.sort(
-		(a, b) => new Date(b.data.date_pub).getTime() - new Date(a.data.date_pub).getTime()
-	);
-
-	return blog_posts;
-}
-const blog_posts = await get_posts();
+const blog_posts = await getPublishedPosts();
 ---
 
 <BaseLayout title="Blog">

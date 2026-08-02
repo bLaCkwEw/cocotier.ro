@@ -32,6 +32,9 @@ const openGraph = {
   },
   image: {
     alt: title || description || "cocotier.ro",
+    type: "image/png",
+    width: 1200,
+    height: 630,
   },
   ...(article ? { article } : {}),
 };
@@ -45,7 +48,42 @@ const twitterCard = {
 const extendMeta = [
   { name: "author", content: "bLaCkwEw" },
   { name: "generator", content: Astro.generator },
+  {
+    name: "theme-color",
+    media: "(prefers-color-scheme: light)",
+    content: "#fafaf9",
+  },
+  {
+    name: "theme-color",
+    media: "(prefers-color-scheme: dark)",
+    content: "#18181b",
+  },
 ];
+
+const jsonLd = article
+	? {
+			"@context": "https://schema.org",
+			"@type": "Article",
+			headline: title,
+			description: description ?? undefined,
+			datePublished: article.publishedTime,
+			...(article.modifiedTime ? { dateModified: article.modifiedTime } : {}),
+			author: {
+				"@type": "Person",
+				name: "bLaCkwEw",
+				url: "https://github.com/bLaCkwEw",
+			},
+			image: ogImage,
+			mainEntityOfPage: Astro.url.toString(),
+	  }
+	: Astro.url.pathname === "/"
+		? {
+				"@context": "https://schema.org",
+				"@type": "WebSite",
+				name: "cocotier.ro",
+				url: "https://cocotier.ro",
+		  }
+		: null;
 ---
 
 <html lang="en" class="scroll-smooth">
@@ -65,12 +103,21 @@ const extendMeta = [
 			extend={{
 				link: [
 					{ rel: "icon", href: "/favicon.png" },
+					{
+						rel: "alternate",
+						type: "application/rss+xml",
+						title: "cocotier.ro",
+						href: "/rss.xml",
+					},
+					{ rel: "apple-touch-icon", href: "/cocotier-512x512.png" },
 				],
 				meta: extendMeta,
 			}}
 		/>
 
 		<link rel="sitemap" href="/sitemap-index.xml" />
+
+		{jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
 
 		<!-- Theme toggle -->
 		<script is:inline>

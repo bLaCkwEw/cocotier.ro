@@ -1,11 +1,12 @@
 ---
-import { getCollection, render } from "astro:content";
+import { render, type CollectionEntry } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Header from "@lib/Header.astro";
 import Time from "@lib/Time.astro";
+import { getPublishedPosts } from "@lib/posts";
 
 export async function getStaticPaths() {
-	const blog_posts = await getCollection("blog");
+	const blog_posts = await getPublishedPosts();
 	return blog_posts.map((post) => ({
 		params: {
 			id: post.id,
@@ -14,7 +15,7 @@ export async function getStaticPaths() {
 	}));
 }
 
-const { post } = Astro.props;
+const { post } = Astro.props as { post: CollectionEntry<"blog"> };
 const { Content } = await render(post);
 
 ---
@@ -25,6 +26,7 @@ const { Content } = await render(post);
 	type="article"
 	article={{
 		publishedTime: post.data.date_pub.toLocaleDateString("en-CA"),
+		modifiedTime: post.data.date_updated?.toLocaleDateString("en-CA"),
 		authors: ["bLaCkwEw"],
 	}}
 >
@@ -36,17 +38,11 @@ const { Content } = await render(post);
 
 		<hr />
 		<style>
-			hr {
-				background-image: url("data:image/svg+xml,%3Csvg width='20' height='10' viewBox='0 0 20 10' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd' stroke-miterlimit='10'%3E%3Cpath fill='none' d='M0 0h20v10H0z'/%3E%3CclipPath id='a'%3E%3Cpath d='M0 0h20v10H0z'/%3E%3C/clipPath%3E%3Cg clip-path='url(%23a)'%3E%3Cpath d='M20 7.384c-4.999-.001-5-4.768-9.999-4.768C5 2.616 5 7.384 0 7.384' fill='none' stroke-width='3' stroke='%233b82f6'/%3E%3C/g%3E%3C/svg%3E");
-				background-size: contain;
-			}
-			article img {
-				aspect-ratio: 16 / 9;
-				width: 100%;
-				height: auto;
-				overflow: hidden;
-			}
-		</style>
+				hr {
+					background-image: url("data:image/svg+xml,%3Csvg width='20' height='10' viewBox='0 0 20 10' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd' stroke-miterlimit='10'%3E%3Cpath fill='none' d='M0 0h20v10H0z'/%3E%3CclipPath id='a'%3E%3Cpath d='M0 0h20v10H0z'/%3E%3C/clipPath%3E%3Cg clip-path='url(%23a)'%3E%3Cpath d='M20 7.384c-4.999-.001-5-4.768-9.999-4.768C5 2.616 5 7.384 0 7.384' fill='none' stroke-width='3' stroke='%233b82f6'/%3E%3C/g%3E%3C/svg%3E");
+					background-size: contain;
+				}
+			</style>
 
 		<Content />
 

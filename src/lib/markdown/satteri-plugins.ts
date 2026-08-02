@@ -168,9 +168,10 @@ export const capitalizeHeadings = defineMdastPlugin({
 // figure (hast)
 //
 // Port of rehype-figure: replace a paragraph whose children are images with a
-// <figure class="rehype-figure"> (or a <div class="rehype-figure-container">
-// when the paragraph holds several images), adding a <figcaption> built from
-// the image alt text.
+// <figure> per image, adding a <figcaption> built from the image alt text.
+// Images render one per line (prose images are full-width), so no wrapping
+// container is needed. The figure itself needs no classes: the typography
+// plugin already gives .prose figure its margins.
 // ---------------------------------------------------------------------------
 
 type HastElement = Extract<HastNode, { type: "element" }>;
@@ -198,7 +199,7 @@ function buildFigure(img: HastElement): HastNode {
 	return {
 		type: "element",
 		tagName: "figure",
-		properties: { className: ["rehype-figure"] },
+		properties: {},
 		children,
 	};
 }
@@ -216,17 +217,15 @@ export const figure = defineHastPlugin({
 
 			if (images.length === 0) return;
 
-			const replacement: HastNode =
-				images.length === 1
-					? images[0]
-					: {
-							type: "element",
-							tagName: "div",
-							properties: { className: ["rehype-figure-container"] },
-							children: images as HastElementContent[],
-						};
-
-			ctx.replaceNode(node, replacement);
+			// One figure per image, stacked (prose images are full-width, so a
+			// flex wrapper would never put them side by side anyway). The extra
+			// figures are inserted after the original paragraph first, because
+			// insertAfter's anchor must be a tree node, not a plugin-built one.
+			const [first, ...rest] = images;
+			if (rest.length > 0) {
+				ctx.insertAfter(node, rest);
+			}
+			ctx.replaceNode(node, first);
 		},
 	},
 });
@@ -265,15 +264,35 @@ export const autolinkHeadings = defineHastPlugin({
 				ctx.setProperty(node, "id", slug);
 			}
 
+			// The heading acts as the hover target: hovering anywhere on it
+			// reveals the "#" anchor (group-hover).
+			ctx.setProperty(node, "className", ["group"]);
+
 			ctx.appendChild(node, {
 				type: "element",
 				tagName: "a",
-				properties: { href: `#${slug}` },
+				properties: {
+					href: `#${slug}`,
+					className: [
+						"opacity-0",
+						"transition-opacity",
+						"no-underline",
+						"group-hover:opacity-100",
+						"group-hover:text-accent",
+						"hover:underline",
+						"focus-visible:opacity-100",
+						"focus-visible:text-accent",
+						"focus-visible:underline",
+						"focus-visible:outline-2",
+						"focus-visible:outline-accent",
+						"focus-visible:outline-offset-2",
+					],
+				},
 				children: [
 					{
 						type: "element",
 						tagName: "span",
-						properties: { className: ["mx-2", "text-blue-500"] },
+						properties: { className: ["mx-2"] },
 						children: [{ type: "text", value: "#" }],
 					},
 				],

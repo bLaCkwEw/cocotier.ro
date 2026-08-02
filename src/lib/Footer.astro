@@ -12,7 +12,7 @@ const lastDeployed = new Date();
 
 		and <FocusLink href="https://astro.build" target="_blank" rel="noopener noreferrer">Astro</FocusLink>
 	</div>
-	<time datetime={lastDeployed} class="block">
+	<time datetime={lastDeployed.toISOString()} class="block">
 		Website last deployed: {
 			lastDeployed.toLocaleString("en-us", {
 				day: "numeric",
