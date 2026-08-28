@@ -1,5 +1,6 @@
 ---
 title: How to Add Window Buttons Back in Gnome
+description: Command to add minimize, maximize, and close buttons to Gnome windows.
 date_pub: 2024.08.17
 ---
 

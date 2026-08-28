@@ -1,6 +1,7 @@
 ---
 title: How to Export and Import Gnome Keybindings
-date_pub: "2024.08.04"
+description: Commands to export and import Gnome / dconf settings.
+date_pub: 2024.08.04
 ---
 
 Gnome stores literally all it's settings with dconf.

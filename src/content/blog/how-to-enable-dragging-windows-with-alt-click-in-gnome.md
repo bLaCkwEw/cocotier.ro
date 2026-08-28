@@ -1,5 +1,6 @@
 ---
 title: How to Enable Dragging Windows with Alt Click in Gnome
+description: Commands to enable ALT Drag on Gnome windows.
 date_pub: 2024.08.10
 ---
 

@@ -1,5 +1,7 @@
 ---
 title: Relationships Are Insurance Against Loneliness
+description: The world is going through a loneliness crisis. It seems to happen
+  more to young people. How do romantic relationships help in this context?
 date_pub: 2026.05.24
 ---
 

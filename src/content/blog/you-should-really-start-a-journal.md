@@ -1,5 +1,7 @@
 ---
 title: You Should Really Start a Journal
+description: I've been keeping a journal for the past couple of years. These are
+  the main reasons I do it and how it helped me.
 date_pub: 2024.08.24
 ---
 

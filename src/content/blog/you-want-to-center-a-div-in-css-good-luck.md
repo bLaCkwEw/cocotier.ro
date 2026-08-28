@@ -1,5 +1,6 @@
 ---
 title: You Want to Center a DIV in CSS? Good Luck!
+description: Overview of how web devs have been centering DIVs across time.
 date_pub: 2024.09.28
 ---
 

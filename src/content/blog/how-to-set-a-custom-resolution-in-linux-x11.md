@@ -1,5 +1,6 @@
 ---
 title: How to Set a Custom Resolution in Linux (X11)
+description: Tutorial to add custom resolutions on X11.
 date_pub: 2024.08.31
 ---
 

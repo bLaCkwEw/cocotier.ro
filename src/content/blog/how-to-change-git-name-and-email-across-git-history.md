@@ -1,5 +1,6 @@
 ---
 title: How to Change Git Name and Email across Git History
+description: Git command to update name & email across git history.
 date_pub: 2024.09.07
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: When Few Words Do Trick
+description: Why write big description, when small description work fine.
 date_pub: 2024.09.14
 ---
 

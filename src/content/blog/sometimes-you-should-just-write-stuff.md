@@ -1,5 +1,7 @@
 ---
 title: Sometimes you should just write stuff
+description: Rambling about the effects my "quality standards" have on my blog
+  content output.
 date_pub: 2026.04.28
 ---
 

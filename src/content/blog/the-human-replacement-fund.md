@@ -1,5 +1,7 @@
 ---
 title: The Human Replacement Fund
+description: In an ideal world, there would be no need for human labor. In this
+  post I ramble about an idea I've had after watching a YouTube video essay.
 date_pub: 2024.10.05
 ---
 

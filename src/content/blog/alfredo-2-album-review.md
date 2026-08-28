@@ -1,10 +1,11 @@
 ---
 title: Alfredo 2  - Album Review
+description: "Review of Alfredo 2, by Freddie Gibbs and The Alchemist. Spoiler:
+  it's pretty good!"
 date_pub: 2025.08.08
 ---
 
-<a href="https://album.link/i/1824019687" target="_blank">**Alfredo 2**</a> is a
-pretty good album from _Freddie Gibbs_ and _The Alchemist_. While it didn't feel
+<a href="https://album.link/i/1824019687" target="_blank">**Alfredo 2**</a> is a pretty good album from _Freddie Gibbs_ and _The Alchemist_. While it didn't feel
 spectacular on first listen, it definitely started to grow on me after a couple
 of plays.
 
