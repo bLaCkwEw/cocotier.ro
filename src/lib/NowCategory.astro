@@ -1,6 +1,13 @@
 ---
 import { Icon } from "astro-icon/components";
+import type { CollectionEntry } from "astro:content";
 import NowEntry from "./NowEntry.astro";
+
+interface Props {
+	title: string;
+	icon: string;
+	entries: CollectionEntry<"now">[];
+}
 
 const { title, icon, entries } = Astro.props;
 const id = title.toLowerCase();
@@ -17,9 +24,7 @@ const id = title.toLowerCase();
 			entries.length > 1 && (
 				<details id={`older-${id}`}>
 					<summary
-						class="font-medium hover:text-accent cursor-pointer"
-						aria-controls={`older-${id}`}
-						aria-expanded="false"
+						class="font-medium hover:text-accent cursor-pointer rounded focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2"
 					>
 						Older entries
 					</summary>
