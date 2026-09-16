@@ -12,6 +12,6 @@ if (!document.cookie.split(";").some((c) => c.trim() === "notice-shown=true")) {
 	if (note) {
 		note.style.display = "block";
 		note.id = "ad-note";
-		note.querySelector("p.ad-note-close").addEventListener("click", hide);
+		note.querySelector("button.ad-note-close")?.addEventListener("click", hide);
 	}
 }

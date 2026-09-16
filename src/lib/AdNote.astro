@@ -4,7 +4,7 @@
 <div
 	id="ad-note-hidden"
 	style="display: none"
-	class="ad-note fixed bottom-4 right-4 z-50 w-56 rounded border border-zinc-900 bg-stone-50 p-4 shadow-[4px_4px_0px_0px] shadow-zinc-900 transition-transform hover:shadow-[8px_8px_0px_0px] dark:border-stone-50 dark:bg-zinc-900 dark:shadow-stone-300 dark:hover:shadow-stone-300 hidden lg:block"
+	class="ad-note fixed bottom-4 right-4 z-50 w-56 max-w-[calc(100vw-2rem)] rounded border border-zinc-900 bg-stone-50 p-4 shadow-[4px_4px_0px_0px] shadow-zinc-900 transition-transform hover:shadow-[8px_8px_0px_0px] dark:border-stone-50 dark:bg-zinc-900 dark:shadow-stone-300 dark:hover:shadow-stone-300"
 >
   <p><strong>No adblocker detected!</strong></p>
 	<p>
@@ -12,7 +12,7 @@
 		<a href="https://github.com/gorhill/uBlock/blob/master/README.md" target="_blank" rel="noopener" class="underline hover:text-accent">uBlock Origin</a>
 		to save time and bandwidth.
   </p>
-  <p class="ad-note-close cursor-pointer w-max">❌ Close notice ❌</p>
+  <button type="button" class="ad-note-close cursor-pointer w-max rounded px-2 py-1 min-h-6 min-w-6 underline hover:text-accent focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-2">Close notice</button>
 </div>
 
 <script defer src="/nativeads.js"></script>

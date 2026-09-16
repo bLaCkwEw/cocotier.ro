@@ -9,7 +9,7 @@ async function get_entries() {
 	return entries;
 }
 
-function format_date(date) {
+function format_date(date: Date) {
 	return date.toLocaleDateString("en-US", {
 		month: "long",
 		day: "2-digit",
@@ -17,7 +17,7 @@ function format_date(date) {
 	});
 }
 
-function format_date_attr(date) {
+function format_date_attr(date: Date) {
 	return date.toISOString().split("T")[0];
 }
 
@@ -53,24 +53,6 @@ const playing = entries.filter((e) => e.data.category === "playing");
 			transform: rotate(90deg);
 		}
 	</style>
-
-	<script is:inline>
-		document.querySelectorAll("details").forEach((details) => {
-			const summary = details.querySelector("summary");
-			if (summary) {
-				summary.setAttribute(
-					"aria-expanded",
-					details.hasAttribute("open") ? "true" : "false",
-				);
-				details.addEventListener("toggle", () => {
-					summary.setAttribute(
-						"aria-expanded",
-						details.hasAttribute("open") ? "true" : "false",
-					);
-				});
-			}
-		});
-	</script>
 
 	<main id="main-content">
 		<h1 class="my-16 text-center text-3xl font-bold">Now</h1>
